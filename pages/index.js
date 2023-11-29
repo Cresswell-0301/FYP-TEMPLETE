@@ -1,8 +1,10 @@
-export default function Home() {
+import Navigation from './navigation';
+
+export default function Home (){
   return (
     <div>
-      <h1 className="text-4xl font-bold">Welcome to our website!</h1>
-      <a href="/layout">click me</a>
+      <Navigation/>
+      
     </div>
   )
 }
