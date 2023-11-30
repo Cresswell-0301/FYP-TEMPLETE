@@ -13,9 +13,19 @@ const Container = styled.div`
 export default function Home (){
   return (
     <div>
+      {/* Navigation Start */}
       <Navigation/>
+      {/* Navigation End */}
+
       <Container>
+        {/* Slide Show Start */}
         <SlideShow/>
+        {/* Slide Show End */}
+
+        {/* Login In Start */}
+        
+        {/* Login In End */}
+
       </Container>
     </div>
   )
