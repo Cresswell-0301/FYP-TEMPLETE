@@ -54,31 +54,37 @@ const styles = `
 }
 `;
 
+// Image Array URLs
 const imageUrls = ["SlideShow/image1.png", "SlideShow/image2.png", "SlideShow/image3.png", "SlideShow/image4.png", "SlideShow/image5.png"];
+
+// Delay between slides
 const delay = 2500;
 
 export default function Slideshow() {
   const [index, setIndex] = React.useState(0);
   const isReversed = React.useRef(false);
 
+  // Change Slide Effect
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      if (isReversed.current) {
+      if (isReversed.current) {     // If reversed, go to previous slide
         setIndex((prevIndex) => (prevIndex - 1 < 0 ? imageUrls.length - 1 : prevIndex - 1));
-      } else {
+      } else {     // If not reversed, go to next slide
         setIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
       }
     }, delay);
 
+    // Clear timeout
     return () => {
       clearTimeout(timeoutId);
     };
   }, [index]);
 
+  // Change slideshow direction
   useEffect(() => {
-    if (index === 4) {
+    if (index === 4) {  // If the last slide, reverse the direction
       isReversed.current = true;
-    } else if (index === 0) {
+    } else if (index === 0) {  // If the first slide, set the direction forward
       isReversed.current = false;
     }
   }, [index]);
