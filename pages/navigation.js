@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 
 const Container = styled.div`
     position: relative;
@@ -157,7 +158,43 @@ const Button = styled.button`
             fill: black;
         }
     }
+`;
 
+const DropDisplay = styled.div`
+  display: ${props => props.show ? 'block' : 'none'};
+  border-radius: 6px;
+  width: 155px;
+  z-index: 2;
+  margin-top: -8px;
+  margin-left: 733px;
+`;
+
+const DropBar = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const DropA = styled.a`
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+`;
+
+const DropBtn = styled.button`
+  text-align: left;
+  border: none;
+  padding: 8px 10px;
+
+  &:hover {
+    background-color: gray;
+
+    ${DropA} {
+      color: white;
+      font-weight: 500;
+    }
+  }
 `;
 
 const RightCol = styled.div`
@@ -206,6 +243,7 @@ const Input = styled.input`
 `;
 
 export default function Navigation (){
+  // Resize Navigation Start
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -224,34 +262,74 @@ export default function Navigation (){
       window.removeEventListener('resize', closeMenuOnResize);
     };
   }, []);
-     
+  // Resize Navigation End
+
+  // Drop Down list Start
+  const [showDropDisplay, setShowDropDisplay] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setShowDropDisplay(false);
+      }
+    }
+
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+  // Drop Down list End
+
+  // Back To 
+  const router = useRouter();
+
   return (
     <div>
       <Container>
+
+        {/* Company Logo Start */}
         <LogoContainer>
           <LogoSubContainer>
-            <a href="#" aria-label="Home">
-              <LogoImg src="Company_Logo.png" />
-            </a>
+            <LogoImg src="Company_Logo.png" onClick={() => router.push('/')}/>  {/* Add the page name behide the / */}
           </LogoSubContainer>
         </LogoContainer>
+        {/* Company Logo End */}
 
+        {/* Navigation Option Start */}
         <List showMenu={showMenu}>
-            <Button><A href="#">Home</A></Button>
-            <Button><A href="#">Promotion</A></Button>
-            <Button>
-                <A href="#">Category</A>
-                <SvgArw viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <Path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"></Path>
-                    </g>
-                </SvgArw>
-            </Button>
-            <Button><A href="#">About Us</A></Button>
-        </List>
 
+          {/* Option 1 */}
+          <Button onClick={() => router.push('/')}><A>Home</A></Button> {/* Add the page name behide the / */}
+
+          {/* Option 2 */}
+          <Button onClick={() => router.push('/')}><A>Promotion</A></Button>  {/* Add the page name behide the / */}
+
+          {/* Option 3 */}
+          <Button onClick={() => setShowDropDisplay(!showDropDisplay)} ref={ref}>
+            <A>Category</A>
+
+            {/* Arrow Down Icon Start */}
+            <SvgArw viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <Path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"></Path>
+              </g>
+            </SvgArw>
+            {/* Arrow Down Icon End */}
+          </Button>
+
+          {/* Option 4 */}
+          <Button onClick={() => router.push('/')}><A>About Us</A></Button> {/* Add the page name behide the / */}
+
+        </List>
+        {/* Navigation Option End */}
+
+        {/* Screen Width be small then it will function > Start < */}
         <NavBtn>
           <Btn type="button" id="main-menu" aria-label="Main menu" aria-haspopup="true" onClick={toggleMenu}>
             <Svg stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -259,17 +337,41 @@ export default function Navigation (){
             </Svg>
           </Btn>
         </NavBtn>
+        {/* Screen Width be small then it will function > End < */}
 
         <RightCol>
-          <Input></Input>
 
-          {/* Search Cart Icon */}
+          {/* Search Input Start */}
+          <Input></Input>
+          {/* Search Input End */}
+
           <Span>
+            {/* Search Cart Icon Start*/}
             <SearchIcon src="Search_Icon.png" alt="Search Icon Error"></SearchIcon>
+            {/* Search Cart Icon End*/}
+
+            {/* Currency Text Start*/}
             <CartText>MYR</CartText>
-          </Span>  
+            {/* Currency Text End*/}
+          </Span>
+
         </RightCol>
       </Container>
+
+      {/* Category Drop Down List Start */}
+      <DropDisplay show={showDropDisplay}>
+        <DropBar>
+          <DropBtn><DropA>Phone</DropA></DropBtn>
+          <DropBtn><DropA>Tablets</DropA></DropBtn>
+          <DropBtn><DropA>Phone Case</DropA></DropBtn>
+          <DropBtn><DropA>Power Bank</DropA></DropBtn>
+          <DropBtn><DropA>Charger</DropA></DropBtn>
+          <DropBtn><DropA>Screen Protector</DropA></DropBtn>
+          <DropBtn><DropA>Cable</DropA></DropBtn>
+        </DropBar>
+      </DropDisplay>
+      {/* Category Drop Down List End */}
+
     </div>
   )
 }
