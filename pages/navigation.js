@@ -44,7 +44,7 @@ const LogoSubContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-
+    
     @media (min-width: 768px) {
         width: auto;
     }
@@ -224,8 +224,6 @@ const CartText = styled.span`
     color: lightgray;
     font-size: 20px;
     font-weight: 400;
-    /* margin-left: -24px; */
-    /* margin-top: 6px; */
 `;
 
 const SearchIcon = styled.img`
@@ -294,7 +292,7 @@ export default function Navigation (){
         {/* Company Logo Start */}
         <LogoContainer>
           <LogoSubContainer>
-            <LogoImg src="Company_Logo.png" onClick={() => router.push('/')}/>  {/* Add the page name behide the / */}
+            <LogoImg src="Navigation/Company_Logo.png" onClick={() => router.push('/')}/>  {/* Add the page name behide the / */}
           </LogoSubContainer>
         </LogoContainer>
         {/* Company Logo End */}
@@ -347,7 +345,7 @@ export default function Navigation (){
 
           <Span>
             {/* Search Cart Icon Start*/}
-            <SearchIcon src="Search_Icon.png" alt="Search Icon Error"></SearchIcon>
+            <SearchIcon src="Navigation/Search_Icon.png" alt="Search Icon Error"></SearchIcon>
             {/* Search Cart Icon End*/}
 
             {/* Currency Text Start*/}
