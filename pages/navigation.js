@@ -347,7 +347,7 @@ export default function Navigation (){
 
           <Span>
             {/* Search Cart Icon Start*/}
-            <SearchIcon src="Navigation/Search_Icon.png" alt="Search Icon Error"></SearchIcon>
+            <SearchIcon src="Navigation/Search_Icon.png" alt="Search Icon Error" title="Search"></SearchIcon>
             {/* Search Cart Icon End*/}
 
             {/* Currency Text Start*/}
