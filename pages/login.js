@@ -34,7 +34,7 @@ const Title = styled.h1`
 const Form = styled.form`
     width: 480px;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 65px;
 `;
 
 const Label = styled.label`
@@ -64,7 +64,7 @@ const Input = styled.input`
 const MiniCon = styled.div`
     display: flex;
     flex-direction: row;
-    padding-top: 10px;
+    padding-top: 1rem;
 `;
 
 const ColCon = styled.div`
@@ -170,8 +170,8 @@ const SharedBtn = styled.button`
     border-radius: 17px;
     border: 1px solid gray;
     background: rgba(217, 217, 217, 0.00);
-    margin: 0 30px;
-    margin-top: -10px;
+    margin: 0 22px;
+    margin-top: -12px;
     cursor: pointer;
 
     &:hover {
@@ -228,27 +228,30 @@ export default function Login() {
                     <SubmitBtn type="submit">Login</SubmitBtn>
                 </MiniCon>
 
+                <Field>
+                    <Legend>or</Legend>
+                </Field>
+                
+                {/* Google LOGIN BTN Start */}
+                <GooBtn type="button">
+                    <OthContainer>
+                        <GImg src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
+                        Google
+                    </OthContainer>
+                </GooBtn>
+                {/* Google LOGIN BTN End */}
+
+                {/* FB LOGIN BTN Start */}
+                <FbBtn type="button">
+                    <OthContainer>
+                        <Svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"></path>
+                        </Svg>
+                        Facebook
+                    </OthContainer>
+                </FbBtn>
+                {/* FB LOGIN BTN End */}
             </Form>
-
-            <Field>
-                <Legend>or</Legend>
-            </Field>
-
-            <GooBtn type="button">
-                <OthContainer>
-                    <GImg src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
-                    Google
-                </OthContainer>
-            </GooBtn>
-
-            <FbBtn type="button">
-                <OthContainer>
-                    <Svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"></path>
-                    </Svg>
-                    Facebook
-                </OthContainer>
-            </FbBtn>
 
         </Container>
     )
