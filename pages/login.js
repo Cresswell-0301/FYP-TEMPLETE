@@ -173,7 +173,7 @@ const SharedBtn = styled.button`
     margin: 0 22px;
     margin-top: -12px;
     cursor: pointer;
-zzz
+
     &:hover {
         border: 1px solid #E4D9D9;
 
