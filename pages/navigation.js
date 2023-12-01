@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 const Container = styled.div`
@@ -161,12 +161,18 @@ const Button = styled.button`
 `;
 
 const DropDisplay = styled.div`
-  display: ${props => props.show ? 'block' : 'none'};
+  display: none;
   border-radius: 6px;
-  width: 155px;
+  width: 100%;
   z-index: 2;
-  margin-top: -8px;
-  margin-left: 733px;
+  margin-top: 344px;
+  margin-left: -138px;
+`;
+
+const SharedBtn = styled(Button)`
+  &:hover ${DropDisplay} {
+    display: block;
+  }
 `;
 
 const DropBar = styled.div`
@@ -176,8 +182,8 @@ const DropBar = styled.div`
 
 const DropA = styled.a`
   font-family: Poppins;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px !important;
+  font-weight: 500 !important;
   text-decoration: none;
   color: black;
 `;
@@ -186,6 +192,7 @@ const DropBtn = styled.button`
   text-align: left;
   border: none;
   padding: 8px 10px;
+  width: 108%;
 
   &:hover {
     background-color: gray;
@@ -262,26 +269,6 @@ export default function Navigation (){
   }, []);
   // Resize Navigation End
 
-  // Drop Down list Start
-  const [showDropDisplay, setShowDropDisplay] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setShowDropDisplay(false);
-      }
-    }
-
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
-  // Drop Down list End
-
   // Back To 
   const router = useRouter();
 
@@ -307,7 +294,7 @@ export default function Navigation (){
           <Button onClick={() => router.push('/')}><A>Promotion</A></Button>  {/* Add the page name behide the / */}
 
           {/* Option 3 */}
-          <Button onClick={() => setShowDropDisplay(!showDropDisplay)} ref={ref}>
+          <SharedBtn>
             <A>Category</A>
 
             {/* Arrow Down Icon Start */}
@@ -318,8 +305,23 @@ export default function Navigation (){
                 <Path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"></Path>
               </g>
             </SvgArw>
-            {/* Arrow Down Icon End */}
-          </Button>
+            {/* Arrow Down Icon End */}    
+
+            {/* Category Drop Down List Start */}
+            <DropDisplay>
+              <DropBar>
+                <DropBtn><DropA>Phone</DropA></DropBtn>
+                <DropBtn><DropA>Tablets</DropA></DropBtn>
+                <DropBtn><DropA>Phone Case</DropA></DropBtn>
+                <DropBtn><DropA>Power Bank</DropA></DropBtn>
+                <DropBtn><DropA>Charger</DropA></DropBtn>
+                <DropBtn><DropA>Screen Protector</DropA></DropBtn>
+                <DropBtn><DropA>Cable</DropA></DropBtn>
+              </DropBar>
+            </DropDisplay>
+            {/* Category Drop Down List End */}
+
+          </SharedBtn>
 
           {/* Option 4 */}
           <Button onClick={() => router.push('/')}><A>About Us</A></Button> {/* Add the page name behide the / */}
@@ -354,21 +356,8 @@ export default function Navigation (){
           </Span>
 
         </RightCol>
-      </Container>
 
-      {/* Category Drop Down List Start */}
-      <DropDisplay show={showDropDisplay}>
-        <DropBar>
-          <DropBtn><DropA>Phone</DropA></DropBtn>
-          <DropBtn><DropA>Tablets</DropA></DropBtn>
-          <DropBtn><DropA>Phone Case</DropA></DropBtn>
-          <DropBtn><DropA>Power Bank</DropA></DropBtn>
-          <DropBtn><DropA>Charger</DropA></DropBtn>
-          <DropBtn><DropA>Screen Protector</DropA></DropBtn>
-          <DropBtn><DropA>Cable</DropA></DropBtn>
-        </DropBar>
-      </DropDisplay>
-      {/* Category Drop Down List End */}
+      </Container>
 
     </div>
   )
