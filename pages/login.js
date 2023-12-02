@@ -119,7 +119,6 @@ const SubmitBtn = styled.button`
 `;
 
 const Field = styled.fieldset`
-    /* width: 80%; */
     margin-right: 100px;
     margin-top: 1rem;
     text-align: center;
@@ -163,14 +162,14 @@ const Svg = styled.svg`
     fill: darkblue;
 `;
 
-// Google, Fb Icon Btn
+// Google, Fb Sharing Btn
 const SharedBtn = styled.button`
     width: 150px;
     height: 64px;
     border-radius: 17px;
     border: 1px solid gray;
     background: rgba(217, 217, 217, 0.00);
-    margin: 0 22px;
+    margin: 0 21px;
     margin-top: -12px;
     cursor: pointer;
 
@@ -191,6 +190,7 @@ const SharedBtn = styled.button`
     }
 `;
 
+// Fb Btn
 const FbBtn = styled(SharedBtn)`
     &:hover {
         Svg {
@@ -199,6 +199,7 @@ const FbBtn = styled(SharedBtn)`
     }
 `;
 
+// Google Btn
 const GooBtn = styled(SharedBtn)`
     &:hover {
         ${GImg} {
@@ -212,22 +213,34 @@ export default function Login() {
         <Container>
             <TitleContainer><Title>Login</Title></TitleContainer>
             
-            <Form action="/login">
+            {/* Form Start */}
+            <Form action="/login" method="post">
+                {/* Username Input Start */}
                 <Label>Username</Label><br/>
                 <Input type="text" name="username" placeholder="Username" required/><br/><br/>
+                {/* Username Input End */}
 
+                {/* Password Input Start */}
                 <Label>Password</Label><br/>
                 <Input type="password" name="password" placeholder="Password" required/>
+                {/* Password Input End */}
 
                 <MiniCon>
                     <ColCon>
+                        {/* Forgot Password */}
                         <SharedSpan>Forgot Password</SharedSpan>
+
+                        {/* Sign Up New Account */}
                         <Span>New User? <Span2>Sign Up</Span2></Span>
                     </ColCon>
 
+                    {/* Login Button Start */}
                     <SubmitBtn type="submit">Login</SubmitBtn>
+                    {/* Login Button End */}
+
                 </MiniCon>
 
+                {/* Have a dot dot line */}
                 <Field>
                     <Legend>or</Legend>
                 </Field>
@@ -235,7 +248,9 @@ export default function Login() {
                 {/* Google LOGIN BTN Start */}
                 <GooBtn type="button">
                     <OthContainer>
+                        {/* Google Img Start */}
                         <GImg src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
+                        {/* Google Img End */}
                         Google
                     </OthContainer>
                 </GooBtn>
@@ -244,15 +259,17 @@ export default function Login() {
                 {/* FB LOGIN BTN Start */}
                 <FbBtn type="button">
                     <OthContainer>
+                        {/* Fb Icon Start */}
                         <Svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"></path>
                         </Svg>
+                        {/* Fb Icon End */}
                         Facebook
                     </OthContainer>
                 </FbBtn>
                 {/* FB LOGIN BTN End */}
             </Form>
-
+            {/* Form End */}
         </Container>
     )
 }
