@@ -33,7 +33,7 @@ const SlideshowDots = styled.div`
   text-align: center;
 `;
 
-const SlideshowDot = styled.div`
+const SlideshowDot = styled.button`
   display: inline-block;
   height: 20px;
   width: 20px;
@@ -58,7 +58,7 @@ export default function SlideShow() {
 
   // Change Slide Effect
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    let timeoutId = setTimeout(() => {
       if (isReversed.current) {     // If reversed, go to previous slide
         setIndex((prevIndex) => (prevIndex - 1 < 0 ? imageUrls.length - 1 : prevIndex - 1));
       } else {     // If not reversed, go to next slide

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import Navigation from './navigation';
-import SlideShow from './slideshow';
 import Login from './login';
 import AfterLogin from './afterlogin';
+import dynamic from 'next/dynamic';
 
 const Container = styled.div`
     margin-top: -7.7px;
@@ -15,6 +14,9 @@ const Container = styled.div`
 `;
 
 export default function Home (){
+  const SlideShow = dynamic(() => import('./slideshow'), { ssr: false });
+  const Navigation = dynamic(() => import('./navigation'), { ssr: false });
+  
   return (
     <div>
       {/* Navigation Start */}
@@ -31,7 +33,7 @@ export default function Home (){
         {/* Login In End */}
 
         {/* After Login Start */}
-        <AfterLogin/>
+        {/* <AfterLogin/> */}
         {/* After Login End */}
 
       </Container>
