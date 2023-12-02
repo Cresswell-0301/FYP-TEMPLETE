@@ -165,13 +165,17 @@ const DropDisplay = styled.div`
   border-radius: 6px;
   width: 100%;
   z-index: 2;
-  margin-top: 344px;
+  margin-top: 272px;
   margin-left: -138px;
 `;
 
 const SharedBtn = styled(Button)`
-  &:hover ${DropDisplay} {
-    display: block;
+
+  &:hover {
+    border-radius: 6px 6px 0 0;
+    ${DropDisplay} {
+      display: block;
+    }
   }
 `;
 
@@ -313,9 +317,7 @@ export default function Navigation (){
                 <DropBtn><DropA>Phone</DropA></DropBtn>
                 <DropBtn><DropA>Tablets</DropA></DropBtn>
                 <DropBtn><DropA>Phone Case</DropA></DropBtn>
-                <DropBtn><DropA>Power Bank</DropA></DropBtn>
                 <DropBtn><DropA>Charger</DropA></DropBtn>
-                <DropBtn><DropA>Screen Protector</DropA></DropBtn>
                 <DropBtn><DropA>Cable</DropA></DropBtn>
               </DropBar>
             </DropDisplay>
