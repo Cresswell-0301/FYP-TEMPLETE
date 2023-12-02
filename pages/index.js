@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Navigation from './navigation';
 import SlideShow from './slideshow';
 import Login from './login';
+import AfterLogin from './afterlogin';
 
 const Container = styled.div`
     margin-top: -7.7px;
@@ -26,8 +27,12 @@ export default function Home (){
         {/* Slide Show End */}
 
         {/* Login In Start */}
-        <Login/>
+        {/* <Login/> */}
         {/* Login In End */}
+
+        {/* After Login Start */}
+        <AfterLogin/>
+        {/* After Login End */}
 
       </Container>
     </div>
