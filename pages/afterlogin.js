@@ -53,7 +53,7 @@ const H1 = styled(SharedTxt)`
 `;
 
 const P = styled(SharedTxt)`
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     text-align: justify;
     max-width: 340px;
@@ -84,27 +84,37 @@ const Hr = styled.hr`
 
 const DownCon = styled(UpCon)`
     height: 68px;
+    padding: 0;
 `;
 
 const Icon = styled.img`
-    width: 32px;
-    height: 32px;
+    width: 60px;
+    height: 60px;
+    padding: 4px 34.2px;
+    cursor: pointer;
+    filter: brightness(50%);
+
+    &:hover {
+        border-radius: 17px;
+        background: rgba(241, 100, 91, 0.85);
+        filter: brightness(100%);
+    }  
 `;
 
 const Icon1 = styled(Icon)`
-
+    border-radius: 17px 0 0 17px;
 `;
 
 const Icon2 = styled(Icon)`
-    
+    border-radius: 0;
 `;
 
 const Icon3 = styled(Icon)`
-    
+    border-radius: 0;
 `;
 
 const Icon4 = styled(Icon)`
-    
+    border-radius: 0 17px 17px 0;
 `;
 
 export default function AfterLogin() {
@@ -116,8 +126,7 @@ export default function AfterLogin() {
 
                 <Details>
                     <H1>Cresswell Lew</H1>
-                    {/* <P>Default Address</P> */}
-                    <P>NO 54, JALAN PUJ 2/10 TAMAN PUNCAK JALIL, BANDAR PUTRA PERMAI, 43300, SERI KEMBANGAN SELANGOR, DARUL EHSAN</P>
+                    <P>1211206094@student.mmu.edu.my</P>
                 </Details>
 
                 <UserSettng src="AfterLogin/User_Setting_Icon.png" title="Setting"/>
@@ -126,10 +135,10 @@ export default function AfterLogin() {
             <Hr/>
 
             <DownCon>
-                <Icon1 src="AfterLogin/Like_Icon.png"/>
-                <Icon2 src="AfterLogin/Shopping_Cart.png"/>
-                <Icon3 src="AfterLogin/Delivery_Icon.png"/>
-                <Icon4 src="AfterLogin/Coupon_Icon.png"/>
+                <Icon1 src="AfterLogin/Like_Icon.png" title="Like"/>
+                <Icon2 src="AfterLogin/Shopping_Cart.png" title="Cart"/>
+                <Icon3 src="AfterLogin/Delivery_Icon.png" title="Delivery"/>
+                <Icon4 src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
             </DownCon>
 
         </Container>
