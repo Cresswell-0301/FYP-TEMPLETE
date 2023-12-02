@@ -163,16 +163,43 @@ const Button = styled.button`
 const DropDisplay = styled.div`
   display: none;
   border-radius: 6px;
-  width: 100%;
+  width: 92%;
   z-index: 2;
   margin-top: 272px;
   margin-left: -138px;
 `;
 
-const SharedBtn = styled(Button)`
+const SharedBtn = styled.div`
+  position: relative;width: 150px;
+  height: 88px;
+  border-radius: 6px;
+  border-width: 0px;
 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(217, 217, 217, 0.00);
+    
   &:hover {
+    background: #DAD2D2;
+    outline: none;
     border-radius: 6px 6px 0 0;
+
+    A {
+      color: #262525;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    Path {
+      fill: black;
+    }
+
     ${DropDisplay} {
       display: block;
     }
@@ -314,11 +341,11 @@ export default function Navigation (){
             {/* Category Drop Down List Start */}
             <DropDisplay>
               <DropBar>
-                <DropBtn><DropA>Phone</DropA></DropBtn>
-                <DropBtn><DropA>Tablets</DropA></DropBtn>
-                <DropBtn><DropA>Phone Case</DropA></DropBtn>
-                <DropBtn><DropA>Charger</DropA></DropBtn>
-                <DropBtn><DropA>Cable</DropA></DropBtn>
+                <DropBtn onClick={() => router.push('/category')}><DropA>Phone</DropA></DropBtn>
+                <DropBtn onClick={() => router.push('/category')}><DropA>Tablets</DropA></DropBtn>
+                <DropBtn onClick={() => router.push('/category')}><DropA>Phone Case</DropA></DropBtn>
+                <DropBtn onClick={() => router.push('/category')}><DropA>Charger</DropA></DropBtn>
+                <DropBtn onClick={() => router.push('/category')}><DropA>Cable</DropA></DropBtn>
               </DropBar>
             </DropDisplay>
             {/* Category Drop Down List End */}
