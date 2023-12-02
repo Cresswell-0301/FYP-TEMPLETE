@@ -214,7 +214,7 @@ export default function Login() {
             <TitleContainer><Title>Login</Title></TitleContainer>
             
             {/* Form Start */}
-            <Form action="/login" method="post">
+            <Form action="/after_login_page" method="post">
                 {/* Username Input Start */}
                 <Label>Username</Label><br/>
                 <Input type="text" name="username" placeholder="Username" required/><br/><br/>

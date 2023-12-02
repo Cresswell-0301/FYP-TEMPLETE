@@ -28,9 +28,9 @@ export default function Home (){
         <SlideShow/>
         {/* Slide Show End */}
 
-        {/* Login In Start */}
-        <Login/>
-        {/* Login In End */}
+        {/* After Login Start */}
+        <AfterLogin/>
+        {/* After Login End */}
 
       </Container>
     </div>

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+  
 const Container = styled.div`
     margin-left: 180px;
     margin-top: 45px;
@@ -108,6 +108,7 @@ const Icon4 = styled(Icon)`
 `;
 
 export default function AfterLogin() {
+
     return(
         <Container>
             <UpCon>
