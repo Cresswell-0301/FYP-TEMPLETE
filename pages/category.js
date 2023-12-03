@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { useRouter } from 'next/router';
 import Navigation from "./navigation";
 import CategoryLeft from './category_left';
 
@@ -62,22 +63,9 @@ const CartItem = styled.div`
     display: flex;
     flex-direction: row;
     width: 99.86%;
-    height: 390px;
-    margin: 10px 10px -90px 10px;
+    height: fit-content;
+    margin: 12px 10px 10px 10px;
     justify-content: center;
-`;
-
-const Item = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 210px;
-    height: 280px;
-    margin-right: 20px;
-
-    border-radius: 5px;
-    border: 0.5px solid #CED4DA;
-    background: #DEE2E6;
-    box-shadow: -5px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const ItemImg = styled.img`
@@ -88,9 +76,81 @@ const ItemImg = styled.img`
 const ItemTxtCon = styled.div`
     display: flex;
     width: 100%;
-    height: 80px;
+    height: 110px;
     flex-direction: column;
     justify-content: center;
+`;
+
+const DetailCon = styled.div`
+    margin-top: -38px;
+`;
+
+const OtherCon = styled.div`
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    width: 100%;
+    height: 100%;
+    margin-top: -38px;
+`;
+
+const Item = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    height: 320px;
+    margin-right: 20px;
+
+    border-radius: 5px;
+    border: 0.5px solid #CED4DA;
+    background: #DEE2E6;
+    box-shadow: -5px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+const Btn = styled.button`
+    /* background-color: #CED4DA; */
+    background-color: transparent;
+    border: none;
+    height: 45px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+
+    &:hover {
+        background: #F1645B;
+        color: white;
+    }
+`;
+
+const LeftBtn = styled(Btn)`
+    width: 70%;
+    border-bottom-left-radius: 5px;
+    margin-right: 0;
+`;
+
+const Img = styled.img`
+    margin-right: 8px;
+`;
+
+const RightBtn = styled(Btn)`
+    width: 30%;
+    border-bottom-right-radius: 10px;
+    margin-left: 0;
+`;
+
+const RBtnIcon = styled.img`
+    width: 25px;
+    height: 25px;
 `;
 
 const H2 = styled.h2`
@@ -114,6 +174,8 @@ const P = styled.p`
 
 export default function Category(){
 
+    const router = useRouter();
+
     return(
         <div>
             {/* Navigation Start */}
@@ -129,116 +191,343 @@ export default function Category(){
                     <H1>Phone</H1>
 
                     <IconCon>
-                        <IconBtn>
+                        <IconBtn onClick={() => router.push('#')}>
                             <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
                         </IconBtn>
 
-                        <IconBtn>
+                        <IconBtn onClick={() => router.push('#')}>
                             <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
                         </IconBtn>
 
-                        <IconBtn>
+                        <IconBtn onClick={() => router.push('#')}>
                             <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
                         </IconBtn>
                     </IconCon>
 
                 </CartTop>
 
+                {/* Row Item Start */}
                 <CartItem>
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
 
+                    {/* Item 1 Start */}
                     <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
 
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
 
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
+                            </ItemTxtCon>
+                        </div>
 
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
                     </Item>
+                    {/* Item 1 End */}
+
+                    {/* Item 2 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 2 End */}
+
+                    {/* Item 3 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 3 End */}
+
+                    {/* Item 4 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 4 End */}
+
+                    {/* Item 5 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 5 End */}
 
                 </CartItem>
+                {/* Row Item End */}
 
+                {/* Row Item Start */}
                 <CartItem>
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
 
+                    {/* Item 1 Start */}
                     <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
 
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
 
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
-                    </Item>
+                            </ItemTxtCon>
+                        </div>
 
-                    <Item>
-                        <ItemImg src="Item/Item_Image.png" alt="Item Image" /> 
-                        <ItemTxtCon>
-                            <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                            
-                            <P>RM 1500.90</P>
-                        </ItemTxtCon>
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
                     </Item>
+                    {/* Item 1 End */}
+
+                    {/* Item 2 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 2 End */}
+
+                    {/* Item 3 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 3 End */}
+
+                    {/* Item 4 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 4 End */}
+
+                    {/* Item 5 Start */}
+                    <Item>
+                        <div onClick={() => router.push('#')}>
+                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                            <ItemTxtCon>
+
+                                {/* Item Detail Start */}
+                                <DetailCon>
+                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                    <P>RM 1500.90</P>
+                                </DetailCon>
+                                {/* Item Detail End */}
+
+                            </ItemTxtCon>
+                        </div>
+
+                        {/* Cart / Like Icon Start */}
+                        <OtherCon>
+                            <LeftBtn>
+                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                <p>Add to Cart</p>
+                            </LeftBtn>
+
+                            <RightBtn>
+                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </RightBtn>
+                        </OtherCon>
+                        {/* Cart / Like Icon End */}
+                    </Item>
+                    {/* Item 5 End */}
 
                 </CartItem>
+                {/* Row Item End */}
+                
             </CartCon>
 
         </div>
