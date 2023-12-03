@@ -4,7 +4,7 @@ import SlideShow from './slideshow';
 import Login from './login';
 
 const Container = styled.div`
-    margin-top: -7.7px;
+    margin-top: 88.3px;
     margin-left: -8px;
     width: 101.03%;
     height: 517px;

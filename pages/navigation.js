@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 const Container = styled.div`
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,6 +16,9 @@ const Container = styled.div`
     top: -8px;
     left: -8px;
     background: linear-gradient(285deg, #000 58.94%, rgba(0, 0, 0, 0.00) 113.07%, rgba(0, 0, 0, 0.11) 113.07%);
+    
+    background-color: white;
+    z-index: 10;
 
     @media (min-width: 640px) {
         height: 40px;
@@ -237,7 +240,7 @@ const DropBtn = styled.button`
 
 const RightCol = styled.div`
   height: 88px;
-  
+
   @media (min-width: 768px) {
     position: absolute;
     display: flex;
@@ -275,7 +278,6 @@ const Input = styled.input`
   width: 120px;
   font-family: Poppins;
   font-size: 18px;
-  
 `;
 
 export default function Navigation (){
