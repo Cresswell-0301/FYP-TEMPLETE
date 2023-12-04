@@ -64,7 +64,7 @@ const CartItem = styled.div`
     flex-direction: row;
     width: 99.86%;
     height: fit-content;
-    margin: 12px 10px 10px 10px;
+    margin: 12px 10px 25px 10px;
 `;
 
 const ItemImg = styled.img`
@@ -102,7 +102,7 @@ const Item = styled.div`
     flex-direction: column;
     width: 210px;
     height: 320px;
-    margin-right: 20px;
+    margin-right: 25px;
 
     border-radius: 5px;
     border: 0.5px solid #CED4DA;
