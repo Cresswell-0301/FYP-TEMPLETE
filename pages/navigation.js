@@ -355,7 +355,7 @@ export default function Navigation (){
             {/* Category Drop Down List Start */}
             <DropDisplay>
               <DropBar>
-                <DropBtn><DropA href="./category.js">Phone</DropA></DropBtn>
+                <DropBtn><DropA href="./category">Phone</DropA></DropBtn>
 
                 <DropBtn><DropA href="#">Tablets</DropA></DropBtn>
 
