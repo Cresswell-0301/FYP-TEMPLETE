@@ -146,6 +146,10 @@ const Button = styled.button`
     }
 `;
 
+const A = styled.a`
+    text-decoration: none;
+`;
+
 export default function CategoryLeft(){
     const [checkedOption, setCheckedOption] = React.useState('');
 
@@ -249,7 +253,9 @@ export default function CategoryLeft(){
             </PriceCon>
 
             <Btm>
-                <Button>Update</Button>
+                <A href="#">
+                    <Button>Update</Button>
+                </A>
             </Btm>
 
         </LeftCon>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 
 const Container = styled.div`
     position: fixed;
@@ -280,6 +279,10 @@ const Input = styled.input`
   font-size: 18px;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+`;
+
 export default function Navigation (){
   // Resize Navigation Start
   const [showMenu, setShowMenu] = useState(false);
@@ -302,9 +305,6 @@ export default function Navigation (){
   }, []);
   // Resize Navigation End
 
-  // Back To 
-  const router = useRouter();
-
   return (
     <div>
       <Container>
@@ -312,7 +312,9 @@ export default function Navigation (){
         {/* Company Logo Start */}
         <LogoContainer>
           <LogoSubContainer>
-            <LogoImg src="Navigation/Company_Logo.png" onClick={() => router.push('/')}/>  {/* Add the page name behide the / */}
+            <Link href="#">
+              <LogoImg src="Navigation/Company_Logo.png"/>  {/* Add the page name behide the / */}
+            </Link>
           </LogoSubContainer>
         </LogoContainer>
         {/* Company Logo End */}
@@ -321,10 +323,14 @@ export default function Navigation (){
         <List showMenu={showMenu}>
 
           {/* Option 1 */}
-          <Button onClick={() => router.push('/')}><A>Home</A></Button> {/* Add the page name behide the / */}
+          <Link href="#">
+            <Button><A>Home</A></Button> {/* Add the page name behide the / */}
+          </Link>
 
           {/* Option 2 */}
-          <Button onClick={() => router.push('/')}><A>Promotion</A></Button>  {/* Add the page name behide the / */}
+          <Link href="#">
+            <Button><A>Promotion</A></Button>  {/* Add the page name behide the / */}
+          </Link>
 
           {/* Option 3 */}
           <SharedBtn>
@@ -343,11 +349,25 @@ export default function Navigation (){
             {/* Category Drop Down List Start */}
             <DropDisplay>
               <DropBar>
-                <DropBtn onClick={() => router.push('/category')}><DropA>Phone</DropA></DropBtn>
-                <DropBtn onClick={() => router.push('/category')}><DropA>Tablets</DropA></DropBtn>
-                <DropBtn onClick={() => router.push('/category')}><DropA>Phone Case</DropA></DropBtn>
-                <DropBtn onClick={() => router.push('/category')}><DropA>Charger</DropA></DropBtn>
-                <DropBtn onClick={() => router.push('/category')}><DropA>Cable</DropA></DropBtn>
+                <Link href="#">
+                  <DropBtn><DropA>Phone</DropA></DropBtn>
+                </Link>
+
+                <Link href="#">
+                  <DropBtn><DropA>Tablets</DropA></DropBtn>
+                </Link>
+
+                <Link href="#">
+                  <DropBtn><DropA>Phone Case</DropA></DropBtn>
+                </Link>
+
+                <Link href="#">
+                  <DropBtn><DropA>Charger</DropA></DropBtn>
+                </Link>
+
+                <Link href="#">
+                  <DropBtn><DropA>Cable</DropA></DropBtn>
+                </Link>
               </DropBar>
             </DropDisplay>
             {/* Category Drop Down List End */}
@@ -355,7 +375,9 @@ export default function Navigation (){
           </SharedBtn>
 
           {/* Option 4 */}
-          <Button onClick={() => router.push('/')}><A>About Us</A></Button> {/* Add the page name behide the / */}
+          <Link href="#">
+            <Button><A>About Us</A></Button> {/* Add the page name behide the / */}
+          </Link>
 
         </List>
         {/* Navigation Option End */}

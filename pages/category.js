@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import styled from "styled-components";
 import CategoryLeft from './category_left';
 import Navigation from "./navigation";
@@ -181,8 +180,6 @@ const P = styled.p`
 `;
 
 export default function Category(){
-
-    const router = useRouter();
 
     return(
         <div>
