@@ -1,7 +1,7 @@
-import styled from "styled-components"
 import { useRouter } from 'next/router';
-import Navigation from "./navigation";
+import styled from "styled-components";
 import CategoryLeft from './category_left';
+import Navigation from "./navigation";
 
 // Cart Top Start
 const CartCon = styled.div`
@@ -67,6 +67,12 @@ const CartItem = styled.div`
     margin: 12px 10px 25px 10px;
 `;
 
+const A = styled.a`
+    text-decoration: none;
+    color: black;
+    cursor: default;
+`;
+
 const ItemImg = styled.img`
     width: 210px;
     height: 200px;
@@ -110,7 +116,7 @@ const Item = styled.div`
     box-shadow: -5px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
-const Btn = styled.button`
+const Btn = styled.a`
     /* background-color: #CED4DA; */
     background-color: transparent;
     border: none;
@@ -121,9 +127,12 @@ const Btn = styled.button`
     justify-content: center;
     align-items: center;
 
+    text-decoration: none;
+    color: black;
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
+    cursor: default;
 
     &:hover {
         background: #F1645B;
@@ -210,7 +219,7 @@ export default function Category(){
 
                     {/* Item 1 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -222,16 +231,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -241,7 +250,7 @@ export default function Category(){
 
                     {/* Item 2 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -253,16 +262,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -272,7 +281,7 @@ export default function Category(){
 
                     {/* Item 3 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -284,16 +293,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -303,7 +312,7 @@ export default function Category(){
 
                     {/* Item 4 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -315,16 +324,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -334,7 +343,7 @@ export default function Category(){
 
                     {/* Item 5 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -346,16 +355,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -371,7 +380,7 @@ export default function Category(){
 
                     {/* Item 1 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -383,16 +392,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -402,7 +411,7 @@ export default function Category(){
 
                     {/* Item 2 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -414,16 +423,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -433,7 +442,7 @@ export default function Category(){
 
                     {/* Item 3 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -445,16 +454,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -464,7 +473,7 @@ export default function Category(){
 
                     {/* Item 4 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -476,16 +485,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
@@ -495,7 +504,7 @@ export default function Category(){
 
                     {/* Item 5 Start */}
                     <Item>
-                        <div onClick={() => router.push('#')}>
+                        <A href="#">
                             <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
                             <ItemTxtCon>
 
@@ -507,16 +516,16 @@ export default function Category(){
                                 {/* Item Detail End */}
 
                             </ItemTxtCon>
-                        </div>
+                        </A>
 
                         {/* Cart / Like Icon Start */}
                         <OtherCon>
-                            <LeftBtn>
+                            <LeftBtn href="#">
                                 <Img src="./Item/Cart_Icon.png" alt="Cart" />
                                 <p>Add to Cart</p>
                             </LeftBtn>
 
-                            <RightBtn>
+                            <RightBtn href="#">
                                 <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </RightBtn>
                         </OtherCon>
