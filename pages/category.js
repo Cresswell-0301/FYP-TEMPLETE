@@ -42,6 +42,18 @@ const Icon = styled.img`
     filter: grayscale(100%) brightness(0);
 `;
 
+const Circle = styled.div`
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-top: -32px;
+    margin-left: 17.5px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+`;
+
 const IconBtn = styled.button`
     border-radius: 10px;
     margin: 0 4px;
@@ -52,6 +64,10 @@ const IconBtn = styled.button`
 
         ${Icon} {
             filter: brightness(100%);
+        }
+
+        ${Circle} {
+            color: black;
         }
     }
 `;
@@ -199,6 +215,7 @@ export default function Category(){
                         <A href="./setting">
                             <IconBtn>
                                 <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                <Circle>100</Circle>
                             </IconBtn>
                         </A>
                         
