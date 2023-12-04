@@ -65,7 +65,6 @@ const CartItem = styled.div`
     width: 99.86%;
     height: fit-content;
     margin: 12px 10px 10px 10px;
-    justify-content: center;
 `;
 
 const ItemImg = styled.img`
