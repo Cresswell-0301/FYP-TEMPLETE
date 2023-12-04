@@ -195,6 +195,11 @@ const P = styled.p`
     font-weight: 400;
 `;
 
+// 改这个看
+const Container = styled.div`
+    margin-top: 10px;
+`;
+
 export default function Category(){
 
     return(
@@ -203,362 +208,364 @@ export default function Category(){
             <Navigation/>
             {/* Navigation End */}
             
-            {/* Left Bar Start */}
-            <CategoryLeft/>
-            {/* Left Bar End */}
+            {/* 这个 */}
+            <Container>     
+                {/* Left Bar Start */}
+                <CategoryLeft/>
+                {/* Left Bar End */}
 
-            <CartCon>
-                <CartTop>
-                    <H1>Phone</H1>
+                <CartCon>
+                    <CartTop>
+                        <H1>Phone</H1>
 
-                    <IconCon>
-                        <A href="./setting">
-                            <IconBtn>
-                                <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
-                                <Circle>100</Circle>
-                            </IconBtn>
-                        </A>
-                        
-                        <A href="#">
-                            <IconBtn>
-                                <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
-                            </IconBtn>
-                        </A>
+                        <IconCon>
+                            <A href="./setting">
+                                <IconBtn>
+                                    <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                    <Circle>100</Circle>
+                                </IconBtn>
+                            </A>
+                            
+                            <A href="#">
+                                <IconBtn>
+                                    <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
+                                </IconBtn>
+                            </A>
 
-                        <A href="#">
-                            <IconBtn>
-                                <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
-                            </IconBtn>
-                        </A>
+                            <A href="#">
+                                <IconBtn>
+                                    <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
+                                </IconBtn>
+                            </A>
 
-                    </IconCon>
+                        </IconCon>
 
-                </CartTop>
+                    </CartTop>
 
-                {/* Row Item Start */}
-                <CartItem>
+                    {/* Row Item Start */}
+                    <CartItem>
 
-                    {/* Item 1 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 1 Start */}
+                        <Item>
+                            <A href="./item_details_page">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 1 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 1 End */}
 
-                    {/* Item 2 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 2 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 2 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 2 End */}
 
-                    {/* Item 3 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 3 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 3 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 3 End */}
 
-                    {/* Item 4 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 4 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 4 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 4 End */}
 
-                    {/* Item 5 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 5 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 5 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 5 End */}
 
-                </CartItem>
-                {/* Row Item End */}
+                    </CartItem>
+                    {/* Row Item End */}
 
-                {/* Row Item Start */}
-                <CartItem>
+                    {/* Row Item Start */}
+                    <CartItem>
 
-                    {/* Item 1 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 1 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 1 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 1 End */}
 
-                    {/* Item 2 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 2 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 2 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 2 End */}
 
-                    {/* Item 3 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 3 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 3 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 3 End */}
 
-                    {/* Item 4 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 4 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 4 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 4 End */}
 
-                    {/* Item 5 Start */}
-                    <Item>
-                        <A href="#">
-                            <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
-                            <ItemTxtCon>
+                        {/* Item 5 Start */}
+                        <Item>
+                            <A href="#">
+                                <ItemImg src="./Item/Item_Image.png" alt="Item Image" /> 
+                                <ItemTxtCon>
 
-                                {/* Item Detail Start */}
-                                <DetailCon>
-                                    <H2>Iphone 15 Pro Max Invisible Casing</H2>
-                                    <P>RM 1500.90</P>
-                                </DetailCon>
-                                {/* Item Detail End */}
+                                    {/* Item Detail Start */}
+                                    <DetailCon>
+                                        <H2>Iphone 15 Pro Max Invisible Casing</H2>
+                                        <P>RM 1500.90</P>
+                                    </DetailCon>
+                                    {/* Item Detail End */}
 
-                            </ItemTxtCon>
-                        </A>
+                                </ItemTxtCon>
+                            </A>
 
-                        {/* Cart / Like Icon Start */}
-                        <OtherCon>
-                            <LeftBtn href="#">
-                                <Img src="./Item/Cart_Icon.png" alt="Cart" />
-                                <p>Add to Cart</p>
-                            </LeftBtn>
+                            {/* Cart / Like Icon Start */}
+                            <OtherCon>
+                                <LeftBtn href="#">
+                                    <Img src="./Item/Cart_Icon.png" alt="Cart" />
+                                    <p>Add to Cart</p>
+                                </LeftBtn>
 
-                            <RightBtn href="#">
-                                <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
-                            </RightBtn>
-                        </OtherCon>
-                        {/* Cart / Like Icon End */}
-                    </Item>
-                    {/* Item 5 End */}
+                                <RightBtn href="#">
+                                    <RBtnIcon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                </RightBtn>
+                            </OtherCon>
+                            {/* Cart / Like Icon End */}
+                        </Item>
+                        {/* Item 5 End */}
 
-                </CartItem>
-                {/* Row Item End */}
-                
-            </CartCon>
-
+                    </CartItem>
+                    {/* Row Item End */}
+                    
+                </CartCon>
+            </Container>
         </div>
     )
 }
