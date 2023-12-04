@@ -196,7 +196,7 @@ export default function Category(){
                     <H1>Phone</H1>
 
                     <IconCon>
-                        <A href="#">
+                        <A href="setting.js">
                             <IconBtn>
                                 <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
                             </IconBtn>

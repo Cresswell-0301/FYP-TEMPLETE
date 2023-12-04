@@ -107,6 +107,7 @@ const List = styled.div`
 
 const A = styled.a`
     font-size: 22px;
+    display: flex;
     color: lightgray;
     transition: color 0.15s ease-in-out;
     align-items: center;
@@ -118,6 +119,9 @@ const A = styled.a`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    width: 100%;
+    height: 100%;
+
 `;
 
 const SvgArw = styled.svg`
@@ -164,15 +168,17 @@ const Button = styled.button`
 
 const DropDisplay = styled.div`
   display: none;
+  background-color: white;
   border-radius: 6px;
-  width: 92%;
+  width: 140px;
   z-index: 2;
   margin-top: 272px;
-  margin-left: -138px;
+  margin-left: -110px;
 `;
 
 const SharedBtn = styled.div`
-  position: relative;width: 150px;
+  position: relative;
+  width: 150px;
   height: 88px;
   border-radius: 6px;
   border-width: 0px;
@@ -203,7 +209,7 @@ const SharedBtn = styled.div`
     }
 
     ${DropDisplay} {
-      display: block;
+      display: flex;
     }
   }
 `;
@@ -224,8 +230,10 @@ const DropA = styled.a`
 const DropBtn = styled.button`
   text-align: left;
   border: none;
-  padding: 8px 10px;
-  width: 108%;
+  padding: 8px 10px 8px 10px;
+  margin-left: -40px;
+  width: 231%;
+  background-color: white;
 
   &:hover {
     background-color: gray;
@@ -281,6 +289,7 @@ const Input = styled.input`
 
 const Link = styled.a`
   text-decoration: none;
+  cursor: pointer;
 `;
 
 export default function Navigation (){
@@ -323,14 +332,11 @@ export default function Navigation (){
         <List showMenu={showMenu}>
 
           {/* Option 1 */}
-          <Link href="#">
-            <Button><A>Home</A></Button> {/* Add the page name behide the / */}
-          </Link>
+            <Button><A href="#">Home</A></Button> {/* Add the page name behide the / */}
+
 
           {/* Option 2 */}
-          <Link href="#">
-            <Button><A>Promotion</A></Button>  {/* Add the page name behide the / */}
-          </Link>
+            <Button><A href="#">Promotion</A></Button>  {/* Add the page name behide the / */}
 
           {/* Option 3 */}
           <SharedBtn>
@@ -349,25 +355,15 @@ export default function Navigation (){
             {/* Category Drop Down List Start */}
             <DropDisplay>
               <DropBar>
-                <Link href="#">
-                  <DropBtn><DropA>Phone</DropA></DropBtn>
-                </Link>
+                <DropBtn><DropA href="./category.js">Phone</DropA></DropBtn>
 
-                <Link href="#">
-                  <DropBtn><DropA>Tablets</DropA></DropBtn>
-                </Link>
+                <DropBtn><DropA href="#">Tablets</DropA></DropBtn>
 
-                <Link href="#">
-                  <DropBtn><DropA>Phone Case</DropA></DropBtn>
-                </Link>
+                <DropBtn><DropA href="#">Phone Case</DropA></DropBtn>
 
-                <Link href="#">
-                  <DropBtn><DropA>Charger</DropA></DropBtn>
-                </Link>
+                <DropBtn><DropA href="#">Charger</DropA></DropBtn>
 
-                <Link href="#">
-                  <DropBtn><DropA>Cable</DropA></DropBtn>
-                </Link>
+                <DropBtn><DropA href="#">Cable</DropA></DropBtn>
               </DropBar>
             </DropDisplay>
             {/* Category Drop Down List End */}
@@ -375,9 +371,7 @@ export default function Navigation (){
           </SharedBtn>
 
           {/* Option 4 */}
-          <Link href="#">
-            <Button><A>About Us</A></Button> {/* Add the page name behide the / */}
-          </Link>
+            <Button><A href="#">About Us</A></Button> {/* Add the page name behide the / */}
 
         </List>
         {/* Navigation Option End */}
