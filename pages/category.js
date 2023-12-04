@@ -197,7 +197,7 @@ const P = styled.p`
 
 // 改这个看
 const Container = styled.div`
-    margin-top: 10px;
+    /* margin-top: 10px; */
 `;
 
 export default function Category(){

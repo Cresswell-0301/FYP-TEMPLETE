@@ -59,15 +59,22 @@ const H6 = styled.h3`
     margin-bottom: 15p;
 `;
 
-const Spec = styled.tr`
-    font-size: 16px;
-    font-weight: 400;
+const Spec = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 20px;
 `;
 
-const Span = styled.td`
+const SpanTitle = styled.h4`
     font-size: 16px;
     font-weight: bold;
-    width: 60px;
+    margin: 0;
+    width: 70px;
+`;
+
+const Span = styled.span`
+    font-size: 16px;
+    font-weight: 400;
 `;
 
 // Global Component Start
@@ -142,20 +149,15 @@ export default function Setting(){
                         <H6>Apple Iphone 15 Pro Max</H6>
 
                         <Spec>
-                            <table>
-                                <Spec>
-                                    <Span>Color</Span>
-                                    <td>: Black</td>
-                                </Spec>
-
-                                <Spec>
-                                    <Span>Storage</Span>
-                                    <td>: 256 GB</td>
-                                </Spec>
-
-                            </table>
+                            <SpanTitle>Color</SpanTitle>
+                            <Span>: Black</Span>
                         </Spec>
 
+                        <Spec>
+                            <SpanTitle>Storage</SpanTitle>
+                            <Span>: 256GB</Span>
+                        </Spec>
+                        
                     </Details>
 
                     <BtnCon>
