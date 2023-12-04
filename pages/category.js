@@ -196,17 +196,24 @@ export default function Category(){
                     <H1>Phone</H1>
 
                     <IconCon>
-                        <IconBtn onClick={() => router.push('#')}>
-                            <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
-                        </IconBtn>
+                        <A href="#">
+                            <IconBtn>
+                                <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
+                            </IconBtn>
+                        </A>
+                        
+                        <A href="#">
+                            <IconBtn>
+                                <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
+                            </IconBtn>
+                        </A>
 
-                        <IconBtn onClick={() => router.push('#')}>
-                            <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
-                        </IconBtn>
+                        <A href="#">
+                            <IconBtn>
+                                <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
+                            </IconBtn>
+                        </A>
 
-                        <IconBtn onClick={() => router.push('#')}>
-                            <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
-                        </IconBtn>
                     </IconCon>
 
                 </CartTop>
