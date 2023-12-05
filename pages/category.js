@@ -157,7 +157,7 @@ const P = styled.p`
 
 // 改这个看
 const Container = styled.div`
-    /* margin-top: 10px; */
+    margin-top: 0px;
 `;
 
 export default function Category(){
@@ -168,38 +168,16 @@ export default function Category(){
             <Navigation/>
             {/* Navigation End */}
             
-            {/* 这个 */}
-            <Container>     
-                {/* Left Bar Start */}
-                <CategoryLeft/>
-                {/* Left Bar End */}
+            {/* Left Bar Start */}
+            <CategoryLeft/>
+            {/* Left Bar End */}
 
+            <Container>     
                 <CartCon>
                     <CartTop>
                         <H1>Phone</H1>
 
-                        {/* <IconCon>
-                            <A href="./setting">
-                                <IconBtn>
-                                    <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
-                                    <Circle>100</Circle>
-                                </IconBtn>
-                            </A>
-                            
-                            <A href="#">
-                                <IconBtn>
-                                    <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
-                                </IconBtn>
-                            </A>
-
-                            <A href="#">
-                                <IconBtn>
-                                    <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
-                                </IconBtn>
-                            </A>
-
-                        </IconCon> */}
-
+                        {/* 3 Icon */}
                         <SideIcon />
                     </CartTop>
 

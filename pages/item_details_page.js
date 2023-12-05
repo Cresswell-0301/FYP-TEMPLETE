@@ -80,7 +80,7 @@ const NextButton = styled(NavigationButton)`
 `;
 // Slide End
 
-// Right Side Start
+// Right Top Start
 const RightCon = styled.div`
     display: flex;
     flex-direction: column;
@@ -122,6 +122,7 @@ const H1 = styled.h1`
     align-items: center;
 `;
 
+// Price Start
 const PriceCon = styled.div`
     display: flex;
     flex-direction: row;
@@ -208,8 +209,72 @@ const ChopImg = styled.img`
     height: 126px;
     transform: rotate(-14deg);
 `;
+// Price Start
 
-// Right Side End
+// Right Top End
+
+// Right Ship Start
+const ShipCon = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: 60px 10px 0;
+    padding: 0 15px;
+    height: max-content;
+`;
+
+const SelectionIcon = styled(ProtecImg)`
+    width: 40px;
+    height: 40px;
+`;
+
+const SelectTxt = styled.h3`
+    width: 13%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #495057;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding-left: 10px;
+`;
+
+const ShipDetail = styled.div`
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+`;
+
+const DetRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+`;
+
+const P = styled.p`
+    color: #000;
+
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin: 0;
+    width: 26%;
+`;
+
+const P1 = styled(P)`
+
+`;
+
+// Right Ship End
 export default function DetailPage(){
     const [slideIndex, setSlideIndex] = useState(0);
 
@@ -284,7 +349,8 @@ export default function DetailPage(){
                 <RightCon>
                     <CartTop>
                         <H1><Promotion>Promotion</Promotion>Iphone 15 Pro Max</H1>
-
+                        
+                        {/* 3 Icon */}
                         <SideIcon />
                     </CartTop>
 
@@ -307,6 +373,29 @@ export default function DetailPage(){
                         </Chop>
 
                     </PriceCon>
+
+                    <ShipCon>
+                        <SelectionIcon src="Item/Ship_Icon.png" alt="Ship" />
+                        <SelectTxt>Shipping</SelectTxt>
+
+                        <ShipDetail>
+                            <DetRow>
+                                <P>Shipping From</P>
+                                <P1>: MALAYSIA</P1>
+                            </DetRow>
+
+                            <DetRow>
+                                <P>Shipping Fee</P>
+                                <P1>: MYR 50.00</P1>
+                            </DetRow>
+                        </ShipDetail>
+                    </ShipCon>
+
+                    {/* <ColorCon></ColorCon> */}
+                    {/* <CapaCon></CapaCon> */}
+                    {/* <QtyCon></QtyCon> */}
+                    {/* <BtnCon></BtnCon> */}
+
                 </RightCon>
             </Container>
         </div>
