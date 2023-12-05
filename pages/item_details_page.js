@@ -214,7 +214,7 @@ const ChopImg = styled.img`
 // Right Top End
 
 // Right Ship Start
-const ShipCon = styled.div`
+const DetailCon = styled.div`
     display: flex;
     flex-direction: row;
     margin: 60px 10px 0;
@@ -222,9 +222,12 @@ const ShipCon = styled.div`
     height: max-content;
 `;
 
+const ImgCon = styled.div`
+    width: 4%;
+`
 const SelectionIcon = styled(ProtecImg)`
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 `;
 
 const SelectTxt = styled.h3`
@@ -245,7 +248,7 @@ const SelectTxt = styled.h3`
 `;
 
 const ShipDetail = styled.div`
-    width: 60%;
+    width: 83%;
     display: flex;
     flex-direction: column;
     margin-top: 12px;
@@ -254,7 +257,7 @@ const ShipDetail = styled.div`
 const DetRow = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100%;    
 `;
 
 const P = styled.p`
@@ -267,11 +270,37 @@ const P = styled.p`
     line-height: normal;
 
     margin: 0;
-    width: 26%;
+    width: 20%;
 `;
 
 const P1 = styled(P)`
+    width: 80%;
+`;
 
+const SubCon = styled(ShipDetail)`
+    margin-top: 0;
+`;
+
+const Button = styled.button`
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid #6C757D;
+    min-width: 10%;
+    width: max-content;
+    height: 35px;
+    margin-right: 15px;
+
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover {
+        background: #343A40;
+        color: #F8F9FA;
+    }
 `;
 
 // Right Ship End
@@ -374,8 +403,8 @@ export default function DetailPage(){
 
                     </PriceCon>
 
-                    <ShipCon>
-                        <SelectionIcon src="Item/Ship_Icon.png" alt="Ship" />
+                    <DetailCon>
+                        <ImgCon><SelectionIcon src="Item/Ship_Icon.png" alt="Ship" /></ImgCon>
                         <SelectTxt>Shipping</SelectTxt>
 
                         <ShipDetail>
@@ -389,12 +418,39 @@ export default function DetailPage(){
                                 <P1>: MYR 50.00</P1>
                             </DetRow>
                         </ShipDetail>
-                    </ShipCon>
+                    </DetailCon>
 
-                    {/* <ColorCon></ColorCon> */}
-                    {/* <CapaCon></CapaCon> */}
-                    {/* <QtyCon></QtyCon> */}
-                    {/* <BtnCon></BtnCon> */}
+                    <DetailCon>
+                        <ImgCon><SelectionIcon src="Item/Color_Icon.png" alt="Ship" /></ImgCon>
+                        <SelectTxt>Color</SelectTxt>
+
+                        <SubCon>
+                            <DetRow>
+
+                                <Button>Pink</Button>
+                                <Button>Blue</Button>
+                                <Button>Purple</Button>
+                                <Button>Violet</Button>
+                                <Button>Black Titanium</Button>
+
+                                {/* <Button>Pink</Button>
+                                <Button>Blue</Button>
+                                <Button>Purple</Button>
+                                <Button>Violet</Button>
+                                <Button>Black Titanium</Button>
+
+                                <Button>Pink</Button>
+                                <Button>Blue</Button>
+                                <Button>Purple</Button>
+                                <Button>Violet</Button>
+                                <Button>Black Titanium</Button> */}
+                            </DetRow>
+                        </SubCon>
+                    </DetailCon>
+
+                    {/* <DetailCon></DetailCon> */}
+                    {/* <DetailCon></DetailCon> */}
+                    {/* <DetailCon></DetailCon> */}
 
                 </RightCon>
             </Container>
