@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Login from './login';
 import AfterLogin from './afterlogin';
 import dynamic from 'next/dynamic';
+import HotDeals from './hotdeal';
 
 const Container = styled.div`
     margin-top: 88.3px;
@@ -19,20 +19,20 @@ export default function Home (){
   
   return (
     <div>
-      {/* Navigation Start */}
+      {/* Navigation */}
       <Navigation/>
-      {/* Navigation End */}
 
       <Container>
-        {/* Slide Show Start */}
+        {/* Slide Show */}
         <SlideShow/>
-        {/* Slide Show End */}
 
-        {/* After Login Start */}
+        {/* After Login */}
         <AfterLogin/>
-        {/* After Login End */}
-
       </Container>
+
+      {/* Hot Deals */}
+      <HotDeals/>
+
     </div>
   )
 }

@@ -332,7 +332,7 @@ export default function Navigation (){
         <List showMenu={showMenu}>
 
           {/* Option 1 */}
-            <Button><A href="#">Home</A></Button> {/* Add the page name behide the / */}
+            <Button><A href="/">Home</A></Button> {/* Add the page name behide the / */}
 
 
           {/* Option 2 */}

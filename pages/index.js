@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Navigation from './navigation';
 import SlideShow from './slideshow';
 import Login from './login';
+import HotDeals from './hotdeal';
 
 const Container = styled.div`
     margin-top: 88.3px;
@@ -17,20 +18,20 @@ export default function Home (){
 
   return (
     <div>
-      {/* Navigation Start */}
+      {/* Navigation */}
       <Navigation/>
-      {/* Navigation End */}
 
       <Container>
-        {/* Slide Show Start */}
+        {/* Slide Show */}
         <SlideShow/>
-        {/* Slide Show End */}
 
-        {/* Login In Start */}
+        {/* Login In */}
         <Login/>
-        {/* Login In End */}
-
       </Container>
+
+      {/* Hot Deals */}
+      <HotDeals />
+
     </div>
   )
 }
