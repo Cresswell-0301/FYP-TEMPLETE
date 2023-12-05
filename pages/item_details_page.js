@@ -57,7 +57,7 @@ const Slide = styled.div`
     margin-right: 10px;
 `;
 
-const Image = styled.img`
+const Image = styled(SharedImg)`
     width: 100%;
     height: auto;
 `;
@@ -80,13 +80,33 @@ const NextButton = styled(NavigationButton)`
 // Slide End
 
 // Right Side Start
+const RightCon = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15px;
+`;
+
 const CartTop = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;
     height: 70px;
-    margin-left: 10px;
     border-bottom: 1px solid black;
+    margin-bottom: 12px;
+`;
+
+const Promotion = styled.span`
+    width: 20%;
+    height: max-content;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 7px;
+    border: none;
+    margin-right: 10px;
+    padding: 5px 0;
+    background: #014BA8;
 `;
 
 const H1 = styled.h1`
@@ -151,6 +171,94 @@ const IconBtn = styled.button`
         }
     }
 `;
+
+const PriceCon = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+    margin: 0 10px;
+    padding: 0 15px;
+    border-radius: 8px;
+    background: #E9ECEF;
+`;
+
+const PriceLeftCon = styled.div`
+    display: flex;
+    width: 75%;
+    height: 100%;
+    flex-direction: column;
+`;
+
+const Up = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    align-items: center;
+`;
+
+const H3 = styled.h3`
+    color: #FC0D0D;
+    font-family: Andika;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+`;
+
+const SharedSpan = styled.span`
+    margin-left: 15px;
+    font-size: 20px;
+`;
+
+const SpanTxt = styled(SharedSpan)`
+    color: #938F8F;
+    text-decoration: line-through;
+`;
+
+const SpanPromo = styled(SharedSpan)`
+    width: fit-content;
+    padding: 5px 8px;
+    color: #F8F9FA;
+    text-align: center;
+    font-family: Poppins;
+    border-radius: 8px;
+    background: #014BA8;
+`;
+
+const Bottom =styled.div`
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
+`;
+const H4 = styled.h4`
+    color: #FC0D0D;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+`;
+
+const ProtecImg = styled.img`
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+`;
+
+const Chop = styled.div`
+    width: 25%;
+    text-align: center;
+    margin-top: -3px;
+`;
+
+const ChopImg = styled.img`
+    width: 107.527px;
+    height: 126px;
+    transform: rotate(-14deg);
+`;
+
 // Right Side End
 export default function DetailPage(){
     const [slideIndex, setSlideIndex] = useState(0);
@@ -223,32 +331,52 @@ export default function DetailPage(){
                     <StarRating />
                 </LeftCon>
 
-                <CartTop>
-                    <H1>Iphone 15 Pro Max</H1>
+                <RightCon>
+                    <CartTop>
+                        <H1><Promotion>Promotion</Promotion>Iphone 15 Pro Max</H1>
 
-                    <IconCon>
-                        <A href="./setting">
-                            <IconBtn>
-                                <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
-                                <Circle>100</Circle>
-                            </IconBtn>
-                        </A>
-                            
-                        <A href="#">
-                            <IconBtn>
-                                <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
-                            </IconBtn>
-                        </A>
+                        <IconCon>
+                            <A href="./setting">
+                                <IconBtn>
+                                    <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
+                                    <Circle>100</Circle>
+                                </IconBtn>
+                            </A>
+                                
+                            <A href="#">
+                                <IconBtn>
+                                    <Icon src="AfterLogin/Shopping_Cart.png" title="Cart"/>
+                                </IconBtn>
+                            </A>
 
-                        <A href="#">
-                            <IconBtn>
-                                <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
-                            </IconBtn>
-                        </A>
+                            <A href="#">
+                                <IconBtn>
+                                    <Icon src="AfterLogin/Coupon_Icon.png" title="Coupon"/>
+                                </IconBtn>
+                            </A>
+                        </IconCon>
+                    </CartTop>
 
-                    </IconCon>
+                    <PriceCon>
+                        <PriceLeftCon>
+                            <Up>
+                                <H3>MYR 2340.00</H3>
+                                <SpanTxt>MYR 2599.00</SpanTxt>
+                                <SpanPromo>10% OFF</SpanPromo>
+                            </Up>
 
-                </CartTop>
+                            <Bottom>
+                                <ProtecImg src="Item/Protect_Icon.png" alt="Icon"/>
+                                <H4>100% Authentic Guarantee</H4>
+                            </Bottom>
+                        </PriceLeftCon>
+
+                        <Chop>
+                            <ChopImg src="Item/Red.png" alt="Chop Icon" />
+                        </Chop>
+
+                    </PriceCon>
+                </RightCon>
             </Container>
         </div>
     )
