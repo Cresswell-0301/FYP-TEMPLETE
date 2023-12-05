@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CategoryLeft from './category_left';
 import Navigation from "./navigation";
+import SideIcon from "./3icon.js";
 
 // Cart Top Start
 const CartCon = styled.div`
@@ -23,53 +24,12 @@ const H1 = styled.h1`
     color: #000;
     font-family: PT Sans;
     font-size: 35px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
-`;
-
-const IconCon = styled.div`
+    width: 82%;
+    height: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
-    margin-left: 72%;
-`;
-
-const Icon = styled.img`
-    width: 40px;
-    height: 40px;
-    padding: 0 10px;
-
-    filter: grayscale(100%) brightness(0);
-`;
-
-const Circle = styled.div`
-    border-radius: 100%;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    margin-top: -32px;
-    margin-left: 17.5px;
-    text-align: center;
-    color: red;
-    font-weight: bold;
-`;
-
-const IconBtn = styled.button`
-    border-radius: 10px;
-    margin: 0 4px;
-    border: 1.5px solid lightgray;
-
-    &:hover{
-        background: #F1645B;
-
-        ${Icon} {
-            filter: brightness(100%);
-        }
-
-        ${Circle} {
-            color: black;
-        }
-    }
 `;
 // Cart Top End
 
@@ -218,7 +178,7 @@ export default function Category(){
                     <CartTop>
                         <H1>Phone</H1>
 
-                        <IconCon>
+                        {/* <IconCon>
                             <A href="./setting">
                                 <IconBtn>
                                     <Icon src="AfterLogin/Like_Icon.png" title="Like"/>
@@ -238,8 +198,9 @@ export default function Category(){
                                 </IconBtn>
                             </A>
 
-                        </IconCon>
+                        </IconCon> */}
 
+                        <SideIcon />
                     </CartTop>
 
                     {/* Row Item Start */}
