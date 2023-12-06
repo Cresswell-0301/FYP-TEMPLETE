@@ -1,3 +1,4 @@
+import React, { useRef , useState } from 'react';
 import styled from "styled-components";
 import Navigation from "./navigation"
 import SettingLeft from "./setting_left"
@@ -67,13 +68,14 @@ const Row1 = styled(Row)`
     margin-bottom: 30px;
 `;
 
-const Img = styled.img`
+const Img = styled.div`
     width: 100px;
     height: 100px;
-
     border-radius: 10px;
     border: 1px solid #343A40;
-
+    background-position: center;
+    background-size: cover;
+    background-image: ${props => props.image ? `url(${props.image})` : 'url("AfterLogin/User_Icon.png")'};
 `;
 
 const Col = styled.div`
@@ -84,7 +86,14 @@ const Col = styled.div`
     width: 100%;
 `;
 
-const Button = styled.button`
+const Inputfile = styled.input`
+    background-color: red;
+    width: max-content;
+    margin-left: -4.4%;
+    display: none;
+`;
+
+const LabelBtn = styled.label`
     width: 15%;
     height: 32%;
     border-radius: 8px;
@@ -96,6 +105,7 @@ const Button = styled.button`
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 1%;
+    z-index: 3;
     cursor: pointer;
 `;
 
@@ -155,6 +165,20 @@ const Btn = styled.button`
 `;
 
 export default function Profile() {
+    const fileInputRef = useRef(null);
+
+    const handleClick = () => {
+        fileInputRef.current.click();
+    };
+
+    // Change Image
+    const [image, setImage] = useState(null);
+
+    const loadFile = (event) => {
+        if (event.target.files.length > 0) {
+            setImage(URL.createObjectURL(event.target.files[0]));
+        }
+    };
 
     return (
         <div>
@@ -170,10 +194,13 @@ export default function Profile() {
                 <CartDet>
                     <form method="post">
                         <Row1>
-                            <Img src="#" alt="Image"/>
+                            <Img image={image}></Img>
 
                             <Col>
-                                <Button>Select Image</Button>
+                                <Inputfile type="file" ref={fileInputRef} onChange={loadFile}/>
+                                <LabelBtn for="file" onClick={handleClick}>
+                                    Select Image
+                                </LabelBtn>
 
                                 <Div>
                                     <Span2>File size</Span2>
