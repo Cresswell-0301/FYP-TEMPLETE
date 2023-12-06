@@ -81,8 +81,9 @@ const Span = styled.span`
     padding-right: 100px;
 `;
 
-const Span2 = styled.span`
+const Span2 = styled.a`
     color: #fff;
+    text-decoration: none;
     cursor: pointer;
     
     &:hover {
@@ -231,7 +232,7 @@ export default function Login() {
                         <SharedSpan>Forgot Password</SharedSpan>
 
                         {/* Sign Up New Account */}
-                        <Span>New User? <Span2>Sign Up</Span2></Span>
+                        <Span>New User? <Span2 href="signup_page">Sign Up</Span2></Span>
                     </ColCon>
 
                     {/* Login Button Start */}

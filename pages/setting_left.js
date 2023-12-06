@@ -154,7 +154,7 @@ export default function SettingLeft(){
                     <Img2 src="AfterLogin/User_Icon.png" alt="User"/>
                     <SubDetail>
                         <H2>My Account</H2>
-                        <A href="#">Profile</A>
+                        <A href="profile">Profile</A>
                         <A href="#">Bank & Cards</A>
                         <A href="#">Address</A>
                     </SubDetail>
