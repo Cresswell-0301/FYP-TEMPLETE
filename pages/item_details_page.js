@@ -51,7 +51,7 @@ const Slides = styled.div`
 `;
 
 const Slide = styled.div`
-    flex: 0 0 25%; /* 25% width for each slide in a row */
+    flex: 0 0 23%; /* width for each slide in a row */
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -244,7 +244,6 @@ const SelectTxt = styled.h3`
     font-weight: 400;
     line-height: normal;
     margin: 0;
-    padding-left: 10px;
 `;
 
 const ShipDetail = styled.div`
@@ -279,7 +278,7 @@ const P1 = styled(P)`
 `;
 
 const SubCon = styled(ShipDetail)`
-    margin-top: 0;
+    /* margin-top: 0; */
 `;
 
 const BtnRow = styled(DetRow)`
@@ -307,6 +306,28 @@ const Button = styled.button`
         background: #343A40;
         color: #F8F9FA;
     }
+`;
+
+const BtnCon = styled(BtnRow)`
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin: 35px 0 0 0;
+    
+    /* background-color: red; */
+`;
+
+const SharedBtn = styled(Button)`
+    
+`;
+
+const AddBtn = styled(SharedBtn)`
+    margin-right: 10px;
+`;
+
+const BuyBtn = styled(SharedBtn)`
+    margin-left: 10px;
 `;
 
 // Right Ship End
@@ -454,9 +475,26 @@ export default function DetailPage(){
                         </SubCon>
                     </DetailCon>
 
-                    {/* <DetailCon></DetailCon> */}
-                    {/* <DetailCon></DetailCon> */}
-                    {/* <DetailCon></DetailCon> */}
+                    <DetailCon>
+                        <ImgCon><SelectionIcon src="Item/Capacity_Icon.png" alt="Ship" /></ImgCon>
+                        <SelectTxt>Capacity</SelectTxt>
+
+                        <SubCon>
+                            <BtnRow>
+
+                                <Button>64 GB</Button>
+                                <Button>128 GB</Button>
+                                <Button>256 GB</Button>
+                                <Button>512 GB</Button>
+                                <Button>1 TB</Button>
+                            </BtnRow>
+                        </SubCon>
+                    </DetailCon>
+
+                    <BtnCon>
+                        <AddBtn>Add to Cart</AddBtn>
+                        <BuyBtn>Buy Now</BuyBtn>
+                    </BtnCon>
 
                 </RightCon>
             </Container>
