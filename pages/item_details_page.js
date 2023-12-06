@@ -257,7 +257,8 @@ const ShipDetail = styled.div`
 const DetRow = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;    
+    width: 100%;
+    flex-wrap: wrap;
 `;
 
 const P = styled.p`
@@ -281,6 +282,10 @@ const SubCon = styled(ShipDetail)`
     margin-top: 0;
 `;
 
+const BtnRow = styled(DetRow)`
+    width: 70%;
+`;
+
 const Button = styled.button`
     background: transparent;
     border-radius: 8px;
@@ -289,6 +294,7 @@ const Button = styled.button`
     width: max-content;
     height: 35px;
     margin-right: 15px;
+    margin-bottom: 15px;
 
     color: #000;
     text-align: center;
@@ -425,7 +431,7 @@ export default function DetailPage(){
                         <SelectTxt>Color</SelectTxt>
 
                         <SubCon>
-                            <DetRow>
+                            <BtnRow>
 
                                 <Button>Pink</Button>
                                 <Button>Blue</Button>
@@ -433,7 +439,7 @@ export default function DetailPage(){
                                 <Button>Violet</Button>
                                 <Button>Black Titanium</Button>
 
-                                {/* <Button>Pink</Button>
+                                <Button>Pink</Button>
                                 <Button>Blue</Button>
                                 <Button>Purple</Button>
                                 <Button>Violet</Button>
@@ -443,8 +449,8 @@ export default function DetailPage(){
                                 <Button>Blue</Button>
                                 <Button>Purple</Button>
                                 <Button>Violet</Button>
-                                <Button>Black Titanium</Button> */}
-                            </DetRow>
+                                <Button>Black Titanium</Button>
+                            </BtnRow>
                         </SubCon>
                     </DetailCon>
 
