@@ -6,7 +6,7 @@ const PageWrapper = styled.div`
     display: flex;
     justify-content: right;
     align-items: center;
-    width: 100.5%;
+    width: 100%;
     height: 98vh;
     background: linear-gradient(-60deg, rgba(0,0,0,1) 55%, rgba(255,255,255,1) 45%);
 `;
