@@ -306,6 +306,11 @@ const Button = styled.button`
         background: #343A40;
         color: #F8F9FA;
     }
+
+    &:focus {
+        background: #343A40;
+        color: #F8F9FA;
+    }
 `;
 
 const BtnCon = styled(BtnRow)`
@@ -316,6 +321,7 @@ const BtnCon = styled(BtnRow)`
     margin: 20px 0 0 0;
     
     /* background-color: red; */
+
 `;
 
 const SharedBtn = styled(Button)`
