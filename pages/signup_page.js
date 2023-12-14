@@ -21,7 +21,7 @@ const Half = styled.div`
 
 const FormCon = styled.div`
     width: 80%;
-    height: 90%;
+    height: 110%;
     border-radius: 17px;
     border: 1px solid #F8F9FA;
 `;
@@ -82,12 +82,12 @@ const ValidationText = styled.p`
     padding: 3px 0 0 5px;
     color: red;
     font-size: 12px;
-    background-color: red;
 `;
 
 const BtnCon = styled.div`
     width: 100%;
     margin-top: 20px;
+    margin-bottom: auto;
     text-align: center;
 `;
 

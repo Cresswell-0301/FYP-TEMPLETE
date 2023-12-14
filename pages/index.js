@@ -3,6 +3,7 @@ import Navigation from './navigation';
 import SlideShow from './slideshow';
 import Login from './login';
 import HotDeals from './hotdeal';
+import Chatbox from './chatbox'; 
 
 const Container = styled.div`
     margin-top: 88.3px;
@@ -32,6 +33,9 @@ export default function Home (){
       {/* Hot Deals */}
       <HotDeals />
 
+      {/* ChatBox */}
+      <Chatbox />
+      
     </div>
   )
 }
