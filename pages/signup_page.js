@@ -1,27 +1,49 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// Styled components
-const PageWrapper = styled.div`
+const Container = styled.div`
     display: flex;
-    justify-content: right;
-    align-items: center;
-    width: 100%;
-    height: 98vh;
+    flex-direction: row;
+    justify-content: center;
+    width: 99.5vw;
+    height: 95.5vh;
     background: linear-gradient(-60deg, rgba(0,0,0,1) 55%, rgba(255,255,255,1) 45%);
 `;
 
-const Half = styled.div`
-    width: 45%;
-    height: 80%;
+const Left = styled.div`
+    width: 40%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: -120px;
+`;
+
+const LogoImg = styled.img`
+    width: 50%;
+`;
+
+const Slogan = styled.h2`
+    color: #000;
+    font-family: Pridi;
+    font-size: 32px;
+    font-weight: 400;
+`;
+
+const Right = styled.div`
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 12%;
+    margin-left: 70px;
+    margin-right: -110px;
 `;
 
 const FormCon = styled.div`
-    width: 80%;
-    height: 110%;
+    width: 38vw;
+    height: 600px;
     border-radius: 17px;
     border: 1px solid #F8F9FA;
 `;
@@ -29,6 +51,8 @@ const FormCon = styled.div`
 const Form = styled.form`
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 `;
 
 const Title = styled.h2`
@@ -50,7 +74,6 @@ const LabelCon = styled.div`
     flex-direction: column;
     padding-left: 45px;
     margin: 10px 0 15px 0;
-
 `;
 
 const Label = styled.label`
@@ -76,12 +99,35 @@ const Input = styled.input`
     line-height: normal;
 `;
 
+const LabelCon2 = styled(LabelCon)`
+    width: 50%;
+    padding-right: 0;
+`;
+
+const LabelRowCon = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+`;
+
+const Input2 = styled(Input)`
+    width: 100%;
+`;
+
 const ValidationText = styled.p`
-    width: 55%;
+    width: 30%;
+    height: auto;
     margin-top: 0;
+    margin-left: 25px;
     padding: 3px 0 0 5px;
     color: red;
     font-size: 12px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
 `;
 
 const BtnCon = styled.div`
@@ -113,7 +159,7 @@ const TNC = styled.div`
     flex-direction: row;
     width: 100%;
     height: 5%;
-    margin-left: 15px;
+    margin-left: 20px;
 `;
 
 const Star = styled.span`
@@ -136,7 +182,6 @@ const P = styled.p`
 
 const TkInput = styled.input`
     width: 14px;
-    margin-top: -12px;
 `;
 
 const SpanTc = styled.div`
@@ -144,7 +189,7 @@ const SpanTc = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-left: -10px;
 `;
 
 const Txt = styled.p`
@@ -153,37 +198,19 @@ const Txt = styled.p`
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
+    margin-left: 5px;
 `;
 
 const A = styled.a`
-    color: blue;
+    color: lightblue;
 
     &:hover {
-        color: darkblue;
+        color: blue;
     }
 `;
 
-const Left = styled.div`
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    margin-left: 10%;
-    margin-top: -10%;
-`;
+export default function SignUp(){
 
-const LogoImg = styled.img`
-    width: 50%;
-`;
-
-const Slogan = styled.h2`
-    color: #000;
-    font-family: Pridi;
-    font-size: 32px;
-    font-weight: 400;
-`;
-
-export default function SignUp () {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -212,6 +239,7 @@ export default function SignUp () {
 
         if (isValid) {
         // Submit form
+            window.location.href = 'after_login_page';
         }
     };
 
@@ -222,87 +250,92 @@ export default function SignUp () {
         return re.test(email);
     };  
 
-  return (
-    <PageWrapper>
-        <Left>
-            <LogoImg src="Company_Logo_Black_Mode.png" alt="Company Logo" />
-            <Slogan>The Perfect Fit for Your Phone !</Slogan>
-        </Left>
+    return(
+        <Container>
+            <Left>
+                <LogoImg src="Company_Logo_Black_Mode.png" alt="Company Logo" />
+                <Slogan>The Perfect Fit for Your Phone !</Slogan>
+            </Left>
 
-        <Half>
-            <FormCon>
-                <Form onSubmit={handleSubmit}method='post'>
-                    <Title>Sign Up</Title>
+            <Right>
+                <FormCon>
+                    <Form onSubmit={handleSubmit}method='post'>
+                        <Title>Sign Up</Title>
 
-                    <LabelCon>
-                        <Label>Username</Label>
-                        <Input
-                        type="text"
-                        placeholder="User Name"
-                        required
-                        />
-                    </LabelCon>
+                        <LabelCon>
+                            <Label>Username</Label>
+                            <Input
+                            type="text"
+                            placeholder="User Name"
+                            required
+                            />
+                        </LabelCon>
 
-                    <LabelCon>
-                        <Label>Email</Label>
-                        <Input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        />
-                    </LabelCon>
+                        <LabelRowCon>
+                            <LabelCon2>
+                                <Label>Email</Label>
+                                <Input2
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                />
+                            </LabelCon2>
 
-                    <LabelCon>
-                        <Label>Password</Label>
-                        <Input
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        />
-                        {emailError && <ValidationText>{emailError}</ValidationText>}
-                    </LabelCon>
+                            {emailError && <ValidationText>{emailError}</ValidationText>}
+                        </LabelRowCon>
+                        
+                        <LabelCon>
+                            <Label>Password</Label>
+                            <Input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            />
+                        </LabelCon>
 
-                    <LabelCon>
-                        <Label>Confirm Password</Label>
-                        <Input
-                        type="password"
-                        placeholder="Re-Confirm Password"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
-                        />
-                        {passwordError && <ValidationText>{passwordError}</ValidationText>}                
-                    </LabelCon>
+                        <LabelRowCon>
+                            <LabelCon2>
+                                <Label>Confirm Password</Label>
+                                <Input2
+                                type="password"
+                                placeholder="Re-Confirm Password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
+                                />
+                            </LabelCon2>
+                            
+                            {passwordError && <ValidationText>{passwordError}</ValidationText>}                
+                        </LabelRowCon>
 
-                    <TNC>
-                        <Star>*</Star>
-                        <P>At least 8 characters long but 12 or more is better.</P>
-                    </TNC>
+                        <TNC>
+                            <Star>*</Star>
+                            <P>At least 8 characters long but 12 or more is better.</P>
+                        </TNC>
 
-                    <TNC>
-                        <Star>*</Star>
-                        <P>A combination of UPPERCASE letters, lowercase letters, numbers, and symbols.</P>
-                    </TNC>
+                        <TNC>
+                            <Star>*</Star>
+                            <P>A combination of UPPERCASE letters, lowercase letters, numbers, and symbols.</P>
+                        </TNC>
 
-                    <SpanTc>
-                        <TkInput type='checkbox' required/>
-                        <Txt>
-                            By signing up, you agree to Name's
-                            <br/>
-                            <A href='#'>Terms of Service</A> & <A href='#'>Privacy Policy</A>
-                        </Txt>
-                    </SpanTc>
+                        <SpanTc>
+                            <TkInput type='checkbox' required/>
+                            <Txt>
+                                By signing up, you agree to Name's <A href='#'>Terms of Service</A> & <A href='#'>Privacy Policy</A>
+                            </Txt>
+                        </SpanTc>
 
-                    <BtnCon>
-                        <Button type="submit">Proceed</Button>
-                    </BtnCon>
-                </Form>
-            </FormCon>
-        </Half>
-    </PageWrapper>
-  );
-};
+                        <BtnCon>
+                            <Button type="submit">Proceed</Button>
+                        </BtnCon>
+
+                    </Form>
+                </FormCon>
+            </Right>
+        </Container>
+    )
+}
