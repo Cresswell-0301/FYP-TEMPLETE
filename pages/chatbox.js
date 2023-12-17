@@ -528,7 +528,8 @@ export default function Debug(){
             }
         }
     };
-
+    
+    // Second Button function
     const handleButtonClickSecond = (value) => {
         const RpyBox2 = document.getElementById("RpyBox2");
         const Rpytxt2 = document.getElementById("LeftRpy2");
@@ -540,7 +541,7 @@ export default function Debug(){
 
             if(x == value) {
                 let values = button2.getAttribute("value");
-                let Link = "Click <a href='#' style='color: blue; text-decoration: underline;'>Here</a>";
+                let Link = "Click <a href='https://www.messenger.com/t/154811617722587/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0' style='color: blue; text-decoration: underline;'>Here</a>";
 
                 switch(values) {
                     case "ProductInfo":
