@@ -2,195 +2,198 @@ import styled from "styled-components";
 import React, { useState, useEffect } from 'react';
 
 const Container = styled.div`
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 1rem;
-    margin-top: 0.5rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  margin-top: 0.5rem;
 
-    width: 98.95%;
-    height: 100%;
+  width: 98.5%;
 
-    top: -8px;
-    left: -8px;
-    background: linear-gradient(285deg, #000 58.94%, rgba(0, 0, 0, 0.00) 113.07%, rgba(0, 0, 0, 0.11) 113.07%);
-    
-    background-color: white;
-    z-index: 10;
+  top: -8px;
+  left: -8px;
+  z-index: 5;
+  background: linear-gradient(
+    285deg,
+    #000 58.94%,
+    rgba(0, 0, 0, 0) 113.07%,
+    rgba(0, 0, 0, 0.11) 113.07%
+  );
+  background-color: white;
 
-    @media (min-width: 640px) {
-        height: 40px;
-    }
+  @media (min-width: 640px) {
+    height: 40px;
+  }
 
-    @media (min-width: 768px) {
-        justify-content: center;
-    }
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const LogoContainer = styled.div`
-    display: flex;
-    flex: 1 1 0%;
-    padding-left: 20px;
+  display: flex;
+  flex: 1 1 0%;
+  padding-left: 20px;
 
-    @media (min-width: 768px) {
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 10px;
-    }
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 10px;
+  }
 `;
 
 const LogoSubContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    
-    @media (min-width: 768px) {
-        width: auto;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 80%;
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
 `;
 
 const LogoImg = styled.img`
-    width: 120px;
-    height: 40px;
+  width: 120px;
+  height: 40px;
 `;
 
 const NavBtn = styled.div`
-    margin-left: 0.5rem;
-    display: flex;
-    align-items: center;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
 
-    @media (min-width: 768px) {
-        display: none;
-    }
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Btn = styled.button`
-    border: none;
-    background: none;
-    padding: 8px;
-    border-radius: 4px;
-    color: #ccc;
-    transition: background-color 0.15s ease-in-out;
+  border: none;
+  background: none;
+  padding: 8px;
+  border-radius: 4px;
+  color: #ccc;
+  transition: background-color 0.15s ease-in-out;
 
-    &:hover {
-        color: #555;
-        background-color: #f0f0f0;
-    }
+  &:hover {
+    color: #555;
+    background-color: #f0f0f0;
+  }
 
-    &:focus {
-        color: #555;
-        background-color: #f0f0f0;
-        outline: none;
-    }
+  &:focus {
+    color: #555;
+    background-color: #f0f0f0;
+    outline: none;
+  }
 `;
 
 const Svg = styled.svg`
-    height: 1.5rem;
-    width: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
 `;
 
 const List = styled.div`
-    display: ${props => (props.showMenu ? 'flex' : 'none')};
-    margin-right: -5rem;
+  display: ${(props) => (props.showMenu ? "flex" : "none")};
+  margin-right: -5rem;
 
-    @media (min-width: 768px) {
-        display: flex;
+  @media (min-width: 768px) {
+    display: flex;
 
-        > * + * {
-            margin-left: 2.5rem;
-        }
+    > * + * {
+      margin-left: 2.5rem;
     }
+  }
 `;
 
 const A = styled.a`
-    font-size: 22px;
-    display: flex;
-    color: lightgray;
-    transition: color 0.15s ease-in-out;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 100%;
-    height: 100%;
-
+  font-size: 22px;
+  color: lightgray;
+  transition: color 0.15s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 8px;
+  /* font-family: Poppins; */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
 
 const SvgArw = styled.svg`
-    height: 30px;
-    padding-left: 10px;
-    
+  height: 30px;
+  padding-left: 4px;
+  padding-top: 4px;
+
 `;
 
 const Path = styled.path`
-    fill: white;
+  fill: white;
 `;
 
 const Button = styled.button`
-    width: 150px;
-    height: 88px;
-    border-radius: 6px;
-    border-width: 0px;
+  width: 150px;
+  height: 66px;
+  border-radius: 6px;
+  border-width: 0px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(217, 217, 217, 0);
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(217, 217, 217, 0.00);
-    
-    &:hover {
-        background: #DAD2D2;
-        outline: none;
+  &:hover {
+    background: #dad2d2;
+    outline: none;
 
-        A {
-          color: #262525;
-          text-align: center;
-          font-family: Poppins;
-          font-size: 24px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
-
-        Path {
-            fill: black;
-        }
+    A {
+      color: #262525;
+      text-align: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
     }
+
+    Path {
+      fill: black;
+    }
+  }
 `;
 
 const DropDisplay = styled.div`
   display: none;
-  background-color: white;
-  border-radius: 6px;
-  width: 140px;
+  /* width: 92%; */
+  width: 100%;
+  /* height: auto; */
   z-index: 2;
-  margin-top: 272px;
-  margin-left: -110px;
+  margin-top: 295px;
+  margin-left: -133px;
+  flex-direction: row;
 `;
 
 const SharedBtn = styled.div`
   position: relative;
   width: 150px;
-  height: 88px;
+  height: 77px;
   border-radius: 6px;
   border-width: 0px;
-
+  padding: 0;
+  margin: 0;
+  margin-top: -8px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(217, 217, 217, 0.00);
-    
+  background-color: rgba(217, 217, 217, 0);
+
   &:hover {
-    background: #DAD2D2;
+    background: #dad2d2;
     outline: none;
     border-radius: 6px 6px 0 0;
 
@@ -214,9 +217,10 @@ const SharedBtn = styled.div`
   }
 `;
 
-const DropBar = styled.div`
+const DropBar = styled.div` // updated code
   display: flex;
   flex-direction: column;
+  width: 104px;
 `;
 
 const DropA = styled.a`
@@ -230,11 +234,9 @@ const DropA = styled.a`
 const DropBtn = styled.button`
   text-align: left;
   border: none;
-  padding: 8px 10px 8px 10px;
-  margin-left: -40px;
-  width: 231%;
-  background-color: white;
-
+  padding: 8px 10px;
+  width: 108%;
+  padding-right: 105px;
   &:hover {
     background-color: gray;
 
@@ -246,7 +248,7 @@ const DropBtn = styled.button`
 `;
 
 const RightCol = styled.div`
-  height: 88px;
+  height: 65px;
 
   @media (min-width: 768px) {
     position: absolute;
@@ -257,21 +259,22 @@ const RightCol = styled.div`
     bottom: 0px;
     right: 0px;
     padding-right: 10px;
+    margin-right: 8%;
   }
 `;
 
 const Span = styled.span`
-    display: inline-flex;
-    border-radius: 6px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    padding-right: 12px;
+  display: inline-flex;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding-right: 12px;
 `;
 
 const CartText = styled.span`
-    font-family: Poppins;
-    color: lightgray;
-    font-size: 20px;
-    font-weight: 400;
+  font-family: Poppins;
+  color: lightgray;
+  font-size: 20px;
+  font-weight: 400;
 `;
 
 const SearchIcon = styled.img`
@@ -287,12 +290,378 @@ const Input = styled.input`
   font-size: 18px;
 `;
 
-const Link = styled.a`
-  text-decoration: none;
-  cursor: pointer;
+const DropBar2 = styled.div`   // New styled component 
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 73%;
+  width: 60%;
+  height: 100px;
+  background-color: red;
 `;
 
+const DropBtn2 = styled.button` // New styled component 
+  text-align: left;
+  border: none;
+  padding: 8px 10px;
+  width: 108%;
+  
+  font-family: Poppins;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    background-color: gray;
+
+    color: white;
+    font-weight: 500;
+  }
+
+`;
+
+// const Container = styled.div`
+//     position: fixed;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 1.5rem 1rem;
+//     margin-top: 0.5rem;
+
+//     width: 98.95%;
+//     height: 100%;
+
+//     top: -8px;
+//     left: -8px;
+//     background: linear-gradient(285deg, #000 58.94%, rgba(0, 0, 0, 0.00) 113.07%, rgba(0, 0, 0, 0.11) 113.07%);
+    
+//     background-color: white;
+//     z-index: 10;
+
+//     @media (min-width: 640px) {
+//         height: 40px;
+//     }
+
+//     @media (min-width: 768px) {
+//         justify-content: center;
+//     }
+// `;
+
+// const LogoContainer = styled.div`
+//     display: flex;
+//     flex: 1 1 0%;
+//     padding-left: 20px;
+
+//     @media (min-width: 768px) {
+//         position: absolute;
+//         top: 0px;
+//         bottom: 0px;
+//         left: 10px;
+//     }
+// `;
+
+// const LogoSubContainer = styled.div`
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     width: 100%;
+    
+//     @media (min-width: 768px) {
+//         width: auto;
+//     }
+// `;
+
+// const LogoImg = styled.img`
+//     width: 120px;
+//     height: 40px;
+// `;
+
+// const NavBtn = styled.div`
+//     margin-left: 0.5rem;
+//     display: flex;
+//     align-items: center;
+
+//     @media (min-width: 768px) {
+//         display: none;
+//     }
+// `;
+
+// const Btn = styled.button`
+//     border: none;
+//     background: none;
+//     padding: 8px;
+//     border-radius: 4px;
+//     color: #ccc;
+//     transition: background-color 0.15s ease-in-out;
+
+//     &:hover {
+//         color: #555;
+//         background-color: #f0f0f0;
+//     }
+
+//     &:focus {
+//         color: #555;
+//         background-color: #f0f0f0;
+//         outline: none;
+//     }
+// `;
+
+// const Svg = styled.svg`
+//     height: 1.5rem;
+//     width: 1.5rem;
+// `;
+
+// const List = styled.div`
+//     display: ${props => (props.showMenu ? 'flex' : 'none')};
+//     margin-right: -5rem;
+
+//     @media (min-width: 768px) {
+//         display: flex;
+
+//         > * + * {
+//             margin-left: 2.5rem;
+//         }
+//     }
+// `;
+
+// const A = styled.a`
+//     font-size: 22px;
+//     display: flex;
+//     color: lightgray;
+//     transition: color 0.15s ease-in-out;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     text-decoration: none;
+
+//     font-family: Poppins;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     width: 100%;
+//     height: 100%;
+
+// `;
+
+// const SvgArw = styled.svg`
+//     height: 30px;
+//     padding-left: 10px;
+    
+// `;
+
+// const Path = styled.path`
+//     fill: white;
+// `;
+
+// const Button = styled.button`
+//     width: 150px;
+//     height: 88px;
+//     border-radius: 6px;
+//     border-width: 0px;
+
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: center;
+//     background-color: rgba(217, 217, 217, 0.00);
+    
+//     &:hover {
+//         background: #DAD2D2;
+//         outline: none;
+
+//         A {
+//           color: #262525;
+//           text-align: center;
+//           font-family: Poppins;
+//           font-size: 24px;
+//           font-style: normal;
+//           font-weight: 400;
+//           line-height: normal;
+//         }
+
+//         Path {
+//             fill: black;
+//         }
+//     }
+// `;
+
+// const DropDisplay = styled.div`
+//   display: none;
+//   background-color: white;
+//   border-radius: 6px;
+//   width: 140px;
+//   z-index: 2;
+//   margin-top: 272px;
+//   margin-left: -110px;
+// `;
+
+// const SharedBtn = styled.div`
+//   position: relative;
+//   width: 150px;
+//   height: 88px;
+//   border-radius: 6px;
+//   border-width: 0px;
+
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: rgba(217, 217, 217, 0.00);
+    
+//   &:hover {
+//     background: #DAD2D2;
+//     outline: none;
+//     border-radius: 6px 6px 0 0;
+
+//     A {
+//       color: #262525;
+//       text-align: center;
+//       font-family: Poppins;
+//       font-size: 24px;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
+//     }
+
+//     Path {
+//       fill: black;
+//     }
+
+//     ${DropDisplay} {
+//       display: flex;
+//     }
+//   }
+// `;
+
+// const DropBar = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
+
+// const DropA = styled.a`
+//   font-family: Poppins;
+//   font-size: 18px !important;
+//   font-weight: 500 !important;
+//   text-decoration: none;
+//   color: black;
+// `;
+
+// const DropBtn = styled.button`
+//   text-align: left;
+//   border: none;
+//   padding: 8px 10px 8px 10px;
+//   margin-left: -40px;
+//   width: 231%;
+//   background-color: white;
+
+//   &:hover {
+//     background-color: gray;
+
+//     ${DropA} {
+//       color: white;
+//       font-weight: 500;
+//     }
+//   }
+// `;
+
+// const RightCol = styled.div`
+//   height: 88px;
+
+//   @media (min-width: 768px) {
+//     position: absolute;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end;
+//     top: 0px;
+//     bottom: 0px;
+//     right: 0px;
+//     padding-right: 10px;
+//   }
+// `;
+
+// const Span = styled.span`
+//     display: inline-flex;
+//     border-radius: 6px;
+//     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+//     padding-right: 12px;
+// `;
+
+// const CartText = styled.span`
+//     font-family: Poppins;
+//     color: lightgray;
+//     font-size: 20px;
+//     font-weight: 400;
+// `;
+
+// const SearchIcon = styled.img`
+//   padding: 0 20px;
+//   cursor: pointer;
+// `;
+
+// const Input = styled.input`
+//   border-radius: 10px;
+//   height: 22px;
+//   width: 120px;
+//   font-family: Poppins;
+//   font-size: 18px;
+// `;
+
+// const Link = styled.a`
+//   text-decoration: none;
+//   cursor: pointer;
+// `;
+
 export default function Navigation (){
+  
+  // Show the DropBar 2 
+  const handleMouseOver = (value) => {    // New Code
+    const DrpBtn2 = document.getElementById('dropbar2');
+
+    switch(value) {
+      case 1:
+        DrpBtn2.style.marginTop = '0px';
+        break;
+
+      case 2:
+        DrpBtn2.style.marginTop = '36.5px';
+        break;
+        
+      case 3:
+        DrpBtn2.style.marginTop = '73.5px';
+        break;
+
+      case 4:
+        DrpBtn2.style.marginTop = '130.5px';
+        break;
+      
+      case 5:
+        DrpBtn2.style.marginTop = '168px';
+        break;
+
+      default:
+        break;
+    }
+    Showoption();
+    DrpBtn2.style.display = 'flex';
+
+    function Showoption () {
+      for (let i = 1; i <= 4; i++) {
+        const button = document.getElementById(`b${i}`);
+        
+        if(i == 1) {
+          button.textContent = "Iphone";
+        } else if(i == 2) {
+          button.textContent = "Samsung";
+        } else if(i == 3) {
+          button.textContent = "XiaoMi";
+        } else if(i == 4) {
+          button.style.display = 'none';
+        }
+      }
+    };
+  };
+
   // Resize Navigation Start
   const [showMenu, setShowMenu] = useState(false);
 
@@ -321,9 +690,9 @@ export default function Navigation (){
         {/* Company Logo Start */}
         <LogoContainer>
           <LogoSubContainer>
-            <Link href="#">
+            {/* <Link href="#"> */}
               <LogoImg src="Navigation/Company_Logo.png"/>  {/* Add the page name behide the / */}
-            </Link>
+            {/* </Link> */}
           </LogoSubContainer>
         </LogoContainer>
         {/* Company Logo End */}
@@ -355,16 +724,25 @@ export default function Navigation (){
             {/* Category Drop Down List Start */}
             <DropDisplay>
               <DropBar>
-                <DropBtn><DropA href="./category">Phone</DropA></DropBtn>
+                <DropBtn onMouseOver={() => handleMouseOver(1)}><DropA href="./category">Phone</DropA></DropBtn>
 
-                <DropBtn><DropA href="#">Tablets</DropA></DropBtn>
+                <DropBtn onMouseOver={() => handleMouseOver(2)}><DropA href="#">Tablets</DropA></DropBtn>
 
-                <DropBtn><DropA href="#">Phone Case</DropA></DropBtn>
+                <DropBtn onMouseOver={() => handleMouseOver(3)}><DropA href="#">Phone Case</DropA></DropBtn>
 
-                <DropBtn><DropA href="#">Charger</DropA></DropBtn>
+                <DropBtn onMouseOver={() => handleMouseOver(4)}><DropA href="#">Charger</DropA></DropBtn>
 
-                <DropBtn><DropA href="#">Cable</DropA></DropBtn>
+                <DropBtn onMouseOver={() => handleMouseOver(5)}><DropA href="#">Cable</DropA></DropBtn>
               </DropBar>
+
+              {/* New Code Start */}
+              <DropBar2 id="dropbar2">
+                {[1, 2, 3, 4].map((buttonNumber) => (
+                  <DropBtn2 key={`b${buttonNumber}`} id={`b${buttonNumber}`} onClick={() => handleButtonClick(buttonNumber)}></DropBtn2>
+                ))}
+              </DropBar2>
+              {/* New Code End */}
+
             </DropDisplay>
             {/* Category Drop Down List End */}
 
