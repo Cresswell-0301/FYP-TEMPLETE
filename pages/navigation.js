@@ -166,8 +166,8 @@ const Button = styled.button`
   }
 `;
 
-const DropDisplay = styled.div`
-  display: none;
+const DropDisplay = styled.div` // update css
+  display: flex;
   /* width: 92%; */
   width: 100%;
   /* height: auto; */
@@ -175,6 +175,67 @@ const DropDisplay = styled.div`
   margin-top: 295px;
   margin-left: -133px;
   flex-direction: row;
+`;
+
+const DropBar = styled.div` // updated code
+  display: none;
+  flex-direction: column;
+  width: 104px;
+`;
+
+const DropA = styled.a`
+  font-family: Poppins;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  color: black;
+
+`;
+
+const DropBar2 = styled.div`   // New styled component 
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 73%;
+  width: 60%;
+  height: 100px;
+`;
+
+const DropBtn = styled.button`
+  text-align: left;
+  border: none;
+  padding: 8px 10px;
+  width: 108%;
+  padding-right: 105px;
+
+  &:hover {
+    background-color: gray;
+
+    ${DropA} {
+      color: white;
+      font-weight: 500;
+    }
+  }
+`;
+
+const DropBtn2 = styled.button` // New styled component 
+  text-align: left;
+  border: none;
+  padding: 8px 10px;
+  width: 108%;
+  font-family: Poppins;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    background-color: gray;
+
+    color: white;
+    font-weight: 500;
+  }
+
 `;
 
 const SharedBtn = styled.div`
@@ -211,41 +272,47 @@ const SharedBtn = styled.div`
       fill: black;
     }
 
-    ${DropDisplay} {
-      display: flex;
+    ${DropBar} {
+      display: flex; 
     }
   }
 `;
 
-const DropBar = styled.div` // updated code
-  display: flex;
-  flex-direction: column;
-  width: 104px;
-`;
+// const DropBar = styled.div` // updated code
+//   display: none;
+//   flex-direction: column;
+//   width: 104px;
+// `;
 
-const DropA = styled.a`
-  font-family: Poppins;
-  font-size: 18px !important;
-  font-weight: 500 !important;
-  text-decoration: none;
-  color: black;
-`;
+// const DropA = styled.a`
+//   font-family: Poppins;
+//   font-size: 18px !important;
+//   font-weight: 500 !important;
+//   text-decoration: none;
+//   color: black;
 
-const DropBtn = styled.button`
-  text-align: left;
-  border: none;
-  padding: 8px 10px;
-  width: 108%;
-  padding-right: 105px;
-  &:hover {
-    background-color: gray;
+// `;
 
-    ${DropA} {
-      color: white;
-      font-weight: 500;
-    }
-  }
-`;
+// const DropBtn = styled.button`
+//   text-align: left;
+//   border: none;
+//   padding: 8px 10px;
+//   width: 108%;
+//   padding-right: 105px;
+
+//   &:hover {
+//     background-color: gray;
+
+//     ${DropA} {
+//       color: white;
+//       font-weight: 500;
+//     }
+
+//     ${DropBar2} {
+//       display: flex;
+//     }
+//   }
+// `;
 
 const RightCol = styled.div`
   height: 65px;
@@ -290,36 +357,34 @@ const Input = styled.input`
   font-size: 18px;
 `;
 
-const DropBar2 = styled.div`   // New styled component 
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  left: 73%;
-  width: 60%;
-  height: 100px;
-  background-color: red;
-`;
+// const DropBar2 = styled.div`   // New styled component 
+//   /* display: none; */
+//   flex-direction: column;
+//   position: absolute;
+//   left: 73%;
+//   width: 60%;
+//   height: 100px;
+// `;
 
-const DropBtn2 = styled.button` // New styled component 
-  text-align: left;
-  border: none;
-  padding: 8px 10px;
-  width: 108%;
-  
-  font-family: Poppins;
-  font-size: 18px !important;
-  font-weight: 500 !important;
-  text-decoration: none;
-  color: black;
+// const DropBtn2 = styled.button` // New styled component 
+//   text-align: left;
+//   border: none;
+//   padding: 8px 10px;
+//   width: 108%;
+//   font-family: Poppins;
+//   font-size: 18px !important;
+//   font-weight: 500 !important;
+//   text-decoration: none;
+//   color: black;
 
-  &:hover {
-    background-color: gray;
+//   &:hover {
+//     background-color: gray;
 
-    color: white;
-    font-weight: 500;
-  }
+//     color: white;
+//     font-weight: 500;
+//   }
 
-`;
+// `;
 
 // const Container = styled.div`
 //     position: fixed;
@@ -613,58 +678,42 @@ const DropBtn2 = styled.button` // New styled component
 // `;
 
 export default function Navigation (){
-  
+
   // Show the DropBar 2 
   const handleMouseOver = (value) => {    // New Code
-    const DrpBtn2 = document.getElementById('dropbar2');
+    const DrpBar2 = document.getElementById('dropbar2');
 
     switch(value) {
       case 1:
-        DrpBtn2.style.marginTop = '0px';
+        DrpBar2.style.marginTop = '195px';
         break;
 
       case 2:
-        DrpBtn2.style.marginTop = '36.5px';
+        DrpBar2.style.marginTop = '266px';
         break;
         
       case 3:
-        DrpBtn2.style.marginTop = '73.5px';
+        DrpBar2.style.marginTop = '339px';
         break;
 
       case 4:
-        DrpBtn2.style.marginTop = '130.5px';
+        DrpBar2.style.marginTop = '452px';
         break;
       
       case 5:
-        DrpBtn2.style.marginTop = '168px';
+        DrpBar2.style.marginTop = '525px';
         break;
 
       default:
         break;
     }
-    console.log(value); // Show Value
-    Showoption();
-    DrpBtn2.style.display = 'flex';
-
-    function Showoption () {
-      for (let i = 1; i <= 4; i++) {
-        const button = document.getElementById(`b${i}`);
-        
-        if(i == 1) {
-          button.textContent = "Iphone";
-        } else if(i == 2) {
-          button.textContent = "Samsung";
-        } else if(i == 3) {
-          button.textContent = "XiaoMi";
-        } else if(i == 4) {
-          button.style.display = 'none';
-        }
-      }
-    };
+    DrpBar2.style.display = 'flex';
   };
 
-  const handleButtonClick = (value) => {
-    console.log(value);
+  // Hide DropBar 2
+  const handleMouseOut = () => {  // New Code
+    const DrpBar2 = document.getElementById('dropbar2');
+    DrpBar2.style.display = 'none';
   }
 
   // Resize Navigation Start
@@ -728,28 +777,55 @@ export default function Navigation (){
 
             {/* Category Drop Down List Start */}
             <DropDisplay>
-              <DropBar>
-                <DropBtn onMouseOver={() => handleMouseOver(1)}><DropA href="./category">Phone</DropA></DropBtn>
+              <DropBar> {/* New Code */}
 
-                <DropBtn onMouseOver={() => handleMouseOver(2)}><DropA href="#">Tablets</DropA></DropBtn>
+                <DropBtn
+                onMouseOver={() => handleMouseOver(1)}
+                onMouseLeave={() => handleMouseOut()}
+                >
+                  <DropA href="./category">Phone</DropA>
+                </DropBtn>
 
-                <DropBtn onMouseOver={() => handleMouseOver(3)}><DropA href="#">Phone Case</DropA></DropBtn>
+                <DropBtn
+                onMouseOver={() => handleMouseOver(2)}
+                onMouseLeave={() => handleMouseOut()}
+                >
+                  <DropA href="#">Tablets</DropA>
+                </DropBtn>
 
-                <DropBtn onMouseOver={() => handleMouseOver(4)}><DropA href="#">Charger</DropA></DropBtn>
+                <DropBtn
+                onMouseOver={() => handleMouseOver(3)}
+                onMouseLeave={() => handleMouseOut()}
+                >
+                  <DropA href="#">Phone Case</DropA>
+                </DropBtn>
 
-                <DropBtn onMouseOver={() => handleMouseOver(5)}><DropA href="#">Cable</DropA></DropBtn>
+                <DropBtn
+                onMouseOver={() => handleMouseOver(4)}
+                onMouseLeave={() => handleMouseOut()}
+                >
+                  <DropA href="#">Charger</DropA>
+                </DropBtn>
+
+                <DropBtn
+                onMouseOver={() => handleMouseOver(5)}
+                onMouseLeave={() => handleMouseOut()}
+                >
+                  <DropA href="#">Cable</DropA>
+                </DropBtn>
+
               </DropBar>
-
-              {/* New Code Start */}
-              <DropBar2 id="dropbar2">
-                {[1, 2, 3, 4].map((buttonNumber) => (
-                  <DropBtn2 key={`b${buttonNumber}`} id={`b${buttonNumber}`} onClick={() => handleButtonClick(buttonNumber)}></DropBtn2>
-                ))}
-              </DropBar2>
-              {/* New Code End */}
-
             </DropDisplay>
             {/* Category Drop Down List End */}
+
+            {/* New Code Start */}
+            <DropBar2 id="dropbar2">
+              <DropBtn2 type="button">Iphone</DropBtn2>
+              <DropBtn2 type="button">Samsung</DropBtn2>
+              <DropBtn2 type="button">XiaoMi</DropBtn2>
+              <DropBtn2 type="button">None</DropBtn2>
+            </DropBar2>
+            {/* New Code End */}
 
           </SharedBtn>
 
