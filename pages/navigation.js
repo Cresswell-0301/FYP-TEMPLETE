@@ -621,22 +621,27 @@ export default function Navigation (){
     switch(value) {
       case 1:
         DrpBtn2.style.marginTop = '0px';
+        console.log(value); // Show Value
         break;
 
       case 2:
         DrpBtn2.style.marginTop = '36.5px';
+        console.log(value); // Show Value
         break;
         
       case 3:
         DrpBtn2.style.marginTop = '73.5px';
+        console.log(value); // Show Value
         break;
 
       case 4:
         DrpBtn2.style.marginTop = '130.5px';
+        console.log(value); // Show Value
         break;
       
       case 5:
         DrpBtn2.style.marginTop = '168px';
+        console.log(value); // Show Value
         break;
 
       default:
