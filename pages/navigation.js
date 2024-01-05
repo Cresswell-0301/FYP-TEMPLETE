@@ -663,6 +663,10 @@ export default function Navigation (){
     };
   };
 
+  const handleButtonClick = (value) => {
+    console.log(value);
+  }
+
   // Resize Navigation Start
   const [showMenu, setShowMenu] = useState(false);
 
