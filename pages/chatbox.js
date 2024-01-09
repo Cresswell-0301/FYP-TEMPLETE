@@ -248,23 +248,24 @@ const Btn2 = styled(Btn)`
     display: none;
 `;
 
-export default function Debug(){
+export default function ChatBox(){
     // Show Message Box
-    const ShowMessage = () => {
+    const ShowMessage = () => {     // Somethings Changed
         const box = document.getElementById("ContainerBox");
 
         const RpyBox = document.getElementById("RpyBox");
         const Rpytxt = document.getElementById("LeftRpy");
         const Selection2 = document.getElementById("Right2");
+        const mss = document.getElementById("Message");
 
         Selection2.style.display = 'none';
 
         if(!box.style.display || box.style.display == "none"){   // Display Chat Box if the Chat Box haven display            
-            
+                        
             box.style.display = 'block';
 
             // Dot Dot Show Message
-            const mss = document.getElementById("Message");
+            // const mss = document.getElementById("Message");
             const RealMss = document.getElementById("Left");
             const Selection = document.getElementById("Right");
 
@@ -274,63 +275,91 @@ export default function Debug(){
             Selection.style.display = 'none';
 
             setTimeout(function () {
-                displayMessage(0);
-            }, 100);
+                // displayMessage(0);
+                
+                // New Start
 
-            function displayMessage(index) {
-                if (index < messages.length) {
-                    mss.innerHTML = messages[index];
-                    mss.style.display = 'block';
+                let x = 0;  // New
+
+                setTimeout(function () {
+                    mss.innerHTML = messages[x];
+                    x+=1;
 
                     setTimeout(function () {
-                        mss.style.display = 'none';
-                        displayMessage(index + 1);
-                    }, 500);
-                } else {
-                    // After displaying all dot messages, set RealMss.style.display to 'block'
-                    RealMss.style.display = 'block';
+                        mss.innerHTML = messages[x];
+                        x+=1;
 
-                    setTimeout(function(){
-                        Selection.style.display = 'block';
-
-                        for (let i = 1; i <= 6; i++) {
-                            const button = document.getElementById(`b${i}`);
+                        setTimeout(function () {
+                            mss.innerHTML = messages[x];
+                            x+=1;
                             
-                            switch (i) {
-                                case 1:
-                                    button.textContent = "Product";
-                                    break;
-                                case 2:
-                                    button.textContent = "Order";
-                                    break;
-                                case 3:
-                                    button.textContent = "Payment";
-                                    break;
-                                case 4:
-                                    button.textContent = "Technical Support";
-                                    break;
-                                case 5:
-                                    button.textContent = "Business Hours";
-                                    break;
-                                case 6:
-                                    button.textContent = "Company Location";
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }    
-                    },1000);
-                }
-            }
+                            setTimeout(function () {
+                                if( x === 3) {
+                                    mss.style.display = 'none';
+                                    RealMss.style.display = 'block';
+                
+                                    Selection.style.display = 'block';
+                
+                                    for (let i = 1; i <= 6; i++) {
+                                        const button = document.getElementById(`b${i}`);
+                
+                                        switch (i) {
+                                            case 1:
+                                                button.textContent = "Product";
+                                                break;
+                
+                                            case 2:
+                                                button.textContent = "Order";
+                                                break;
+                                                
+                                            case 3:
+                                                button.textContent = "Payment";
+                                                break;
+                
+                                            case 4:
+                                                button.textContent = "Technical Support";
+                                                break;
+                
+                                            case 5:
+                                                button.textContent = "Business Hours";
+                                                break;
+                
+                                            case 6:
+                                                button.textContent = "Company Location";
+                                                break;
+                
+                                            default:
+                                                break;
+                                        }
+                                        
+                                        setTimeout(function () {
+                                            button.style.display = 'block';
+                                        }, 1500);
+                                    }
+                                }
+                            }, 1000);
+
+                        }, 500);
+
+                    }, 500);
+
+                }, 500);
+
+                mss.style.display = 'block';
+                // New End
+
+            }, 100);
+            
         } else {
+            
             box.style.display = 'none'; // Close Chat Box if the Chat Box displayed
+            mss.innerHTML = '';
+            mss.style.display = 'none';
 
             for (let i = 1; i <= 6; i++) {
                 const button = document.getElementById(`b${i}`);
 
-                if(i == i) {
-                    button.style.display = 'block';
-                }
+                button.style.display = 'none'; // Changed
             }
             const RpyBox2 = document.getElementById("RpyBox2");
             const Rpytxt2 = document.getElementById("LeftRpy2");
